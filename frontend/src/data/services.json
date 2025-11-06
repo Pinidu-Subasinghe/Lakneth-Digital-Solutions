@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "icon": "Monitor",
+    "title": "Web Design & Development",
+    "shortDesc": "Custom, responsive, and SEO-optimized websites that bring your business online.",
+    "longDesc": "We design and build tailored websites optimized for all devices and search engines. Our process includes UX research, visual design, and modern frontend development with React or Next.js to ensure speed, scalability, and a seamless user experience."
+  },
+  {
+    "id": 2,
+    "icon": "MessageCircle",
+    "title": "SMS & Email Marketing",
+    "shortDesc": "Connect with your audience through personalized SMS and email campaigns that drive engagement.",
+    "longDesc": "Our SMS & Email Marketing solutions help your business maintain customer relationships with precision-targeted messages, automation workflows, and insightful analytics. Increase conversions and retention through timely, relevant communication across every touchpoint."
+  },
+  {
+    "id": 3,
+    "icon": "BarChart2",
+    "title": "SEO & Analytics",
+    "shortDesc": "Enhance visibility, attract organic traffic, and measure success effectively.",
+    "longDesc": "We offer comprehensive on-page and off-page SEO strategies, keyword optimization, and detailed performance analytics. Our team ensures your site ranks higher while providing real-time insights on visitor trends and campaign performance."
+  },
+  {
+    "id": 4,
+    "icon": "Share2",
+    "title": "Social Media Marketing",
+    "shortDesc": "Boost engagement with powerful content strategies and ad campaigns.",
+    "longDesc": "We create and manage social media campaigns that amplify your brand voice, increase engagement, and grow your customer base. From creative content to targeted ads, we make your social presence impactful and measurable."
+  }
+]

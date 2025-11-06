@@ -12,3 +12,26 @@ html, body, #root {
 body {
   @apply font-nunito;
 }
+
+/* Disable hover animations on touch / mobile devices */
+@media (hover: none), (pointer: coarse) {
+  /* Remove transitions and transforms for elements using Tailwind hover utilities */
+  [class*="hover:"] {
+    transition: none !important;
+  }
+
+  /* Also neutralize transitions/transforms on descendants to be safe */
+  [class*="hover:"] * {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  /* Prevent hover pseudo-class styles from taking effect if a browser simulates :hover */
+  [class*="hover:"]:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background-color: inherit !important;
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+}
