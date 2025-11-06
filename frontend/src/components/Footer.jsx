@@ -119,7 +119,7 @@ export default function Footer() {
 
           <div className="flex gap-5 justify-center md:justify-start">
             <a
-              href="https://facebook.com"
+              href="https://web.facebook.com/people/Lakneth-Digital-Social-Media-Marketing/100064813908325/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"

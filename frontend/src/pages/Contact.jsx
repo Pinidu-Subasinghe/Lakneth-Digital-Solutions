@@ -1,17 +1,14 @@
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 export default function Contact() {
+  // ✅ Correct embed link (use only this type of URL)
+  const mapLocationUrl =
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1038.8328726957272!2d79.9478384322013!3d6.708557488511224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae24921fa34fee3%3A0x1b84ba9f3fb5731f!2sLakneth%20Digital%20Solutions!5e0!3m2!1sen!2slk!4v1762410407510!5m2!1sen!2slk";
+
   return (
     <section className="bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-100">
-      {/* ===== PAGE HEADER ===== */}
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-900 dark:to-indigo-900 text-white text-center py-20">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-3">Contact Us</h1>
-        <p className="text-blue-100 text-lg">
-          We’d love to hear from you! Let’s talk about your next project.
-        </p>
-      </div>
 
-      {/* ===== CONTACT CONTENT ===== */}
+      {/* ===== CONTENT ===== */}
       <div className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12">
         {/* LEFT - CONTACT FORM */}
         <div>
@@ -19,10 +16,7 @@ export default function Contact() {
             Send Us a Message
           </h2>
 
-          <form
-            onSubmit={(e) => e.preventDefault()}
-            className="space-y-5"
-          >
+          <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
             <div>
               <label className="block text-sm font-semibold mb-2">Your Name</label>
               <input
@@ -62,7 +56,7 @@ export default function Contact() {
           </form>
         </div>
 
-        {/* RIGHT - CONTACT INFO */}
+        {/* RIGHT - CONTACT INFO + MAP */}
         <div className="flex flex-col justify-center">
           <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
             Get in Touch
@@ -71,36 +65,56 @@ export default function Contact() {
           <ul className="space-y-4 text-gray-700 dark:text-gray-300">
             <li className="flex items-start gap-3">
               <MapPin className="text-blue-600 dark:text-blue-400 mt-1" size={20} />
-              <span>No. 12, Kandy Road, Kurunegala, Sri Lanka</span>
+              <span>Panadura, Sri Lanka</span>
             </li>
             <li className="flex items-start gap-3">
               <Phone className="text-blue-600 dark:text-blue-400 mt-1" size={20} />
-              <a href="tel:+94761234567" className="hover:text-blue-600 dark:hover:text-blue-400 transition">
+              <a
+                href="tel:+94761234567"
+                className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >
                 +94 76 123 4567
               </a>
             </li>
             <li className="flex items-start gap-3">
               <Mail className="text-blue-600 dark:text-blue-400 mt-1" size={20} />
-              <a href="mailto:info@laknethdigital.lk" className="hover:text-blue-600 dark:hover:text-blue-400 transition">
+              <a
+                href="mailto:info@laknethdigital.lk"
+                className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >
                 info@laknethdigital.lk
               </a>
             </li>
             <li className="flex items-start gap-3">
               <Clock className="text-blue-600 dark:text-blue-400 mt-1" size={20} />
-              <span>Mon – Fri: 9.00am – 6.00pm</span>
+              <span>Mon – Fri: 9.00am – 10.00pm</span>
             </li>
           </ul>
 
-          {/* Google Map */}
-          <div className="mt-8 rounded-xl overflow-hidden shadow-md">
+          {/* GOOGLE MAP (iframe-based) */}
+          <div className="mt-8 h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
             <iframe
-              title="Lakneth Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.474220028001!2d80.368!3d7.483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2b8a8cbe6717f%3A0x1a99ccf3aef77c6b!2sKurunegala%2C%20Sri%20Lanka!5e0!3m2!1sen!2slk!4v1689071534431!5m2!1sen!2slk"
+              src={mapLocationUrl}
               width="100%"
-              height="250"
+              height="100%"
+              style={{ border: 0 }}
               allowFullScreen=""
               loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Lakneth Location"
             ></iframe>
+          </div>
+
+          {/* View on Maps Button */}
+          <div className="mt-4 text-center md:text-left">
+            <a
+              href="https://maps.app.goo.gl/dqyUtPBmNqLrTKYj7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-2 text-blue-600 dark:text-blue-400 font-semibold hover:underline"
+            >
+              📍 View on Google Maps
+            </a>
           </div>
         </div>
       </div>
