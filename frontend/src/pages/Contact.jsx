@@ -73,7 +73,7 @@ export default function Contact() {
                 href="tel:+94761234567"
                 className="hover:text-blue-600 dark:hover:text-blue-400 transition"
               >
-                +94 76 123 4567
+                +94 75 634 3816
               </a>
             </li>
             <li className="flex items-start gap-3">
@@ -87,7 +87,7 @@ export default function Contact() {
             </li>
             <li className="flex items-start gap-3">
               <Clock className="text-blue-600 dark:text-blue-400 mt-1" size={20} />
-              <span>Mon – Fri: 9.00am – 10.00pm</span>
+              <span>Mon – Sun: 9.00am – 10.00pm</span>
             </li>
           </ul>
 

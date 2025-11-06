@@ -84,7 +84,7 @@ export default function Footer() {
                 size={16}
                 className="text-blue-600 dark:text-blue-400 mt-1"
               />
-              <span>No. 12, Kandy Road, Kurunegala, Sri Lanka</span>
+              <span>112/H/13, Raja Samaranayaka Mawatha, Alubomulla, Panadura</span>
             </li>
             <li className="flex items-center gap-2">
               <Phone size={16} className="text-blue-600 dark:text-blue-400" />
@@ -92,7 +92,7 @@ export default function Footer() {
                 href="tel:+94761234567"
                 className="hover:text-blue-600 dark:hover:text-blue-400 transition"
               >
-                +94 76 123 4567
+                +94 75 634 3816
               </a>
             </li>
             <li className="flex items-center gap-2">
@@ -106,7 +106,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <Clock size={16} className="text-blue-600 dark:text-blue-400" />
-              <span>Mon – Fri: 9.00am – 6.00pm</span>
+              <span>Mon – Sun: 9.00am – 10.00pm</span>
             </li>
           </ul>
         </div>
