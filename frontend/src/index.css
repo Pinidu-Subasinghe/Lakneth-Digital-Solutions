@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Global font style */
+/* Use explicit font-family as a fallback in case Tailwind isn't applied in some environments. */
+html, body, #root {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+/* Keep Tailwind utility available for components that use it */
+body {
+  @apply font-nunito;
+}
