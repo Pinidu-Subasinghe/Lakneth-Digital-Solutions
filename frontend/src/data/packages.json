@@ -1,20 +1,178 @@
 [
   {
-    "id": 1,
-    "name": "Basic",
-    "price": "Rs. 15,000",
-    "features": ["Logo Design", "2 Social Posts/Week", "Basic Analytics"]
+    "serviceId": 1,
+    "serviceTitle": "Web Design & Development",
+    "packages": [
+      {
+        "id": "web-bronze",
+        "name": "Bronze",
+        "price": "LKR 15,000",
+        "duration": "month",
+        "features": [
+          "1-page responsive website",
+          "Basic layout and design customization",
+          "Mobile optimization",
+          "Free hosting for 1 month"
+        ]
+      },
+      {
+        "id": "web-silver",
+        "name": "Silver",
+        "price": "LKR 30,000",
+        "duration": "month",
+        "popular": true,
+        "features": [
+          "5-page responsive website",
+          "Custom UI/UX design",
+          "SEO-friendly structure",
+          "Contact form + email integration",
+          "3-month free support"
+        ]
+      },
+      {
+        "id": "web-gold",
+        "name": "Gold",
+        "price": "LKR 50,000",
+        "duration": "month",
+        "features": [
+          "Unlimited pages website",
+          "CMS integration (WordPress / Custom)",
+          "Full SEO setup + analytics",
+          "Domain + SSL setup",
+          "6-month premium support"
+        ]
+      }
+    ]
   },
   {
-    "id": 2,
-    "name": "Pro",
-    "price": "Rs. 30,000",
-    "features": ["Website + Ads", "5 Posts/Week", "SEO Setup"]
+    "serviceId": 2,
+    "serviceTitle": "SEO & Analytics",
+    "packages": [
+      {
+        "id": "seo-bronze",
+        "name": "Bronze",
+        "price": "LKR 10,000",
+        "duration": "month",
+        "features": [
+          "Basic keyword optimization",
+          "Google Search Console setup",
+          "Monthly performance report"
+        ]
+      },
+      {
+        "id": "seo-silver",
+        "name": "Silver",
+        "price": "LKR 25,000",
+        "duration": "month",
+        "popular": true,
+        "features": [
+          "Comprehensive keyword research",
+          "On-page SEO optimization",
+          "Competitor analysis",
+          "Google Analytics integration",
+          "Monthly insights & strategy call"
+        ]
+      },
+      {
+        "id": "seo-gold",
+        "name": "Gold",
+        "price": "LKR 45,000",
+        "duration": "month",
+        "features": [
+          "Full on-page & off-page SEO",
+          "Backlink building & performance tracking",
+          "Advanced analytics dashboard",
+          "Content optimization for ranking",
+          "Weekly updates & reports"
+        ]
+      }
+    ]
   },
   {
-    "id": 3,
-    "name": "Premium",
-    "price": "Rs. 50,000",
-    "features": ["E-Commerce Site", "10 Posts/Week", "Full Analytics & SEO"]
+    "serviceId": 3,
+    "serviceTitle": "Social Media Marketing",
+    "packages": [
+      {
+        "id": "smm-bronze",
+        "name": "Bronze",
+        "price": "LKR 12,000",
+        "duration": "month",
+        "features": [
+          "2 social platforms (Facebook & Instagram)",
+          "8 posts per month",
+          "Basic ad promotion",
+          "Performance report"
+        ]
+      },
+      {
+        "id": "smm-silver",
+        "name": "Silver",
+        "price": "LKR 25,000",
+        "duration": "month",
+        "popular": true,
+        "features": [
+          "3 platforms (FB, IG, LinkedIn)",
+          "12 posts per month + 1 reel",
+          "Ad campaign setup",
+          "Monthly insights & analytics"
+        ]
+      },
+      {
+        "id": "smm-gold",
+        "name": "Gold",
+        "price": "LKR 40,000",
+        "duration": "month",
+        "features": [
+          "All major platforms (FB, IG, TikTok, LinkedIn)",
+          "20 posts per month + 2 reels",
+          "Full ad management & remarketing",
+          "Dedicated strategist & creative team",
+          "Advanced growth analytics"
+        ]
+      }
+    ]
+  },
+  {
+    "serviceId": 4,
+    "serviceTitle": "SMS & Email Marketing",
+    "packages": [
+      {
+        "id": "marketing-bronze",
+        "name": "Bronze",
+        "price": "LKR 8,000",
+        "duration": "month",
+        "features": [
+          "1,000 SMS per month",
+          "Basic email templates (2)",
+          "Monthly performance report"
+        ]
+      },
+      {
+        "id": "marketing-silver",
+        "name": "Silver",
+        "price": "LKR 18,000",
+        "duration": "month",
+        "popular": true,
+        "features": [
+          "3,000 SMS per month",
+          "5 custom email templates",
+          "Automated drip campaigns",
+          "Open rate & click analytics"
+        ]
+      },
+      {
+        "id": "marketing-gold",
+        "name": "Gold",
+        "price": "LKR 35,000",
+        "duration": "month",
+        "features": [
+          "10,000 SMS per month",
+          "Unlimited custom emails",
+          "Advanced segmentation & targeting",
+          "A/B testing + AI content optimization",
+          "Dedicated campaign manager"
+        ]
+      }
+    ]
   }
 ]
