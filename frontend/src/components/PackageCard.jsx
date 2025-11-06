@@ -8,13 +8,6 @@ export default function PackageCard({ pkg, serviceTitle }) {
 
   return (
     <div className="relative flex flex-col bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-8 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 h-full">
-      {/* Popular Badge */}
-      {pkg.popular && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-semibold px-4 py-1 rounded-full shadow-md">
-          Most Popular
-        </div>
-      )}
-
       {/* Package Header */}
       <div className="flex flex-col items-center text-center mb-4">
         <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
