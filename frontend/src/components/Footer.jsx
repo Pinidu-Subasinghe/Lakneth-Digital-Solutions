@@ -1,0 +1,169 @@
+import { Link } from "react-router-dom";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Facebook,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
+
+export default function Footer() {
+  return (
+    <footer className="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700">
+      <div className="max-w-7xl mx-auto px-6 py-16 grid gap-10 sm:grid-cols-2 md:grid-cols-4">
+        {/* ===== COMPANY INFO ===== */}
+        <div>
+          <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-3">
+            Lakneth Digital Solutions
+          </h2>
+          <p className="text-sm leading-relaxed">
+            Empowering Sri Lankan businesses with innovative digital strategies,
+            modern web design, and creative marketing solutions.
+          </p>
+        </div>
+
+        {/* ===== QUICK LINKS ===== */}
+        <div>
+          <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">
+            Quick Links
+          </h3>
+          <ul className="space-y-2 text-sm">
+            <li>
+              <Link
+                to="/"
+                className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/services"
+                className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/portfolio"
+                className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >
+                Portfolio
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/packages"
+                className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >
+                Packages
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/contact"
+                className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* ===== CONTACT INFO ===== */}
+        <div>
+          <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">
+            Contact Us
+          </h3>
+          <ul className="space-y-2 text-sm">
+            <li className="flex items-start gap-2">
+              <MapPin
+                size={16}
+                className="text-blue-600 dark:text-blue-400 mt-1"
+              />
+              <span>No. 12, Kandy Road, Kurunegala, Sri Lanka</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <Phone size={16} className="text-blue-600 dark:text-blue-400" />
+              <a
+                href="tel:+94761234567"
+                className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >
+                +94 76 123 4567
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <Mail size={16} className="text-blue-600 dark:text-blue-400" />
+              <a
+                href="mailto:info@laknethdigital.lk"
+                className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >
+                info@laknethdigital.lk
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <Clock size={16} className="text-blue-600 dark:text-blue-400" />
+              <span>Mon – Fri: 9.00am – 6.00pm</span>
+            </li>
+          </ul>
+        </div>
+
+        {/* ===== SOCIALS ===== */}
+        <div>
+          <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">
+            Follow Us
+          </h3>
+
+          <div className="flex gap-5 justify-center md:justify-start">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="p-3 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-500 transition-transform transform hover:-translate-y-1 shadow-md"
+            >
+              <Facebook size={20} />
+            </a>
+
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="p-3 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-pink-600 hover:text-white dark:hover:bg-pink-500 transition-transform transform hover:-translate-y-1 shadow-md"
+            >
+              <Instagram size={20} />
+            </a>
+
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="p-3 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-blue-700 hover:text-white dark:hover:bg-blue-600 transition-transform transform hover:-translate-y-1 shadow-md"
+            >
+              <Linkedin size={20} />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* ===== COPYRIGHT BAR ===== */}
+      <div className="border-t border-gray-300 dark:border-gray-700 text-center py-4 text-sm">
+        <p>
+          © {new Date().getFullYear()}{" "}
+          <span className="text-blue-600 dark:text-blue-400 font-medium">
+            Lakneth Digital Solutions
+          </span>
+          . All Rights Reserved.
+        </p>
+        <p className="text-gray-500 dark:text-gray-400">
+          Empowering Digital Growth 💡
+        </p>
+      </div>
+    </footer>
+  );
+}

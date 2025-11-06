@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Corporate Website Redesign",
+    "description": "A complete website redesign for a leading corporate brand with a focus on responsive UX.",
+    "image": "https://picsum.photos/500/300?random=1"
+  },
+  {
+    "id": 2,
+    "title": "E-Commerce Storefront",
+    "description": "Modern e-commerce solution with integrated analytics and smooth checkout.",
+    "image": "https://picsum.photos/500/300?random=2"
+  },
+  {
+    "id": 3,
+    "title": "Social Media Branding Kit",
+    "description": "Creative content strategy and design for multi-platform brand consistency.",
+    "image": "https://picsum.photos/500/300?random=3"
+  },
+  {
+    "id": 4,
+    "title": "Digital Marketing Campaign",
+    "description": "Results-driven campaign that boosted conversion by 45%.",
+    "image": "https://picsum.photos/500/300?random=4"
+  },
+  {
+    "id": 5,
+    "title": "SEO Optimization Project",
+    "description": "Comprehensive SEO audit and keyword strategy to increase visibility.",
+    "image": "https://picsum.photos/500/300?random=5"
+  },
+  {
+    "id": 6,
+    "title": "Portfolio Showcase Site",
+    "description": "Minimal portfolio website built with React and Tailwind CSS.",
+    "image": "https://picsum.photos/500/300?random=6"
+  },
+  {
+    "id": 7,
+    "title": "Event Management Dashboard",
+    "description": "Interactive event analytics dashboard with custom reporting tools.",
+    "image": "https://picsum.photos/500/300?random=7"
+  },
+  {
+    "id": 8,
+    "title": "Startup Landing Page",
+    "description": "Animated landing page optimized for lead generation and conversions.",
+    "image": "https://picsum.photos/500/300?random=8"
+  }
+]
