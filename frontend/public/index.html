@@ -3,9 +3,14 @@
   <head>
     <meta charset="utf-8" />
 
-    <!-- ✅ Favicon and App Icons -->
-    <link rel="icon" href="%PUBLIC_URL%/Lakneth Logo.png" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/Lakneth Logo.png" />
+  <!-- ✅ Favicon and App Icons -->
+  <!-- Primary favicon (PNG). Some browsers still query /favicon.ico — ensure server serves the correct file in production. -->
+  <link rel="icon" type="image/png" sizes="192x192" href="%PUBLIC_URL%/Lakneth Logo.png" />
+  <!-- Fallback shortcut icon (helps some Android/legacy browsers prefer this over /favicon.ico) -->
+  <link rel="shortcut icon" href="%PUBLIC_URL%/Lakneth Logo.png" />
+  <!-- Apple touch icon for iOS home screen/bookmarks -->
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/Lakneth Logo.png" />
+  <!-- Android/Chrome manifest (already present) -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <!-- ✅ Google Font -->
