@@ -26,5 +26,12 @@
     "title": "Social Media Marketing",
     "shortDesc": "Boost engagement with powerful content strategies and ad campaigns.",
     "longDesc": "We create and manage social media campaigns that amplify your brand voice, increase engagement, and grow your customer base. From creative content to targeted ads, we make your social presence impactful and measurable."
+  },
+  {
+    "id": 5,
+    "icon": "PenTool",
+    "title": "Logo Design & Branding",
+    "shortDesc": "Create a lasting impression with a unique logo and cohesive brand identity.",
+    "longDesc": "Our Logo Design & Branding services focus on crafting a distinctive brand identity that resonates with your target audience. We work closely with you to understand your vision and values, translating them into a compelling visual identity that stands out in the market."
   }
 ]

@@ -24,7 +24,7 @@ export default function CallToAction() {
       <motion.img
         src={marketing3Img}
         alt="Marketing Strategy"
-        className="hidden lg:block absolute right-10 top-0 w-64 xl:w-72 object-contain opacity-90"
+        className="hidden lg:block absolute right-10 top-10 w-52 xl:w-60 object-contain opacity-90"
         initial={{ opacity: 0, y: -60 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import servicesData from "../data/services.json";
-import { Monitor, MessageCircle, BarChart2, Share2 } from "lucide-react";
-import { motion } from "framer-motion";
+import { Monitor, MessageCircle, BarChart2, Share2, PenTool } from "lucide-react";
 import codingIcon from "../assets/coding.png";
 import smsIcon from "../assets/sms.png";
 import seoIcon from "../assets/seo.png";
 import likeIcon from "../assets/like.png";
 
-const icons = { Monitor, MessageCircle, BarChart2, Share2 };
+const icons = { Monitor, MessageCircle, BarChart2, Share2, PenTool };
 
 export default function Services() {
   const [services, setServices] = useState([]);
@@ -42,35 +41,37 @@ export default function Services() {
 
       {/* ===== Content ===== */}
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="text-center text-4xl font-bold mb-14 text-gray-900 dark:text-white"
-        >
+        <h1 className="text-center text-4xl font-bold mb-14 text-gray-900 dark:text-white">
           Our Services
-        </motion.h1>
+        </h1>
 
-        <div className="grid gap-10 md:grid-cols-2">
-          {services.map((service, index) => {
+        <div className="grid gap-10 md:grid-cols-3">
+          {services.map((service) => {
             const Icon = icons[service.icon];
             return (
               <div
                 key={service.id}
-                className="p-8 bg-white/80 dark:bg-gray-900/80 rounded-2xl shadow-lg hover:shadow-xl border border-gray-200 dark:border-gray-800 transition-all backdrop-blur-md"
+                className="relative p-8 bg-white/80 dark:bg-gray-900/80 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-md h-full backdrop-blur-md group transition-all duration-300 transform lg:hover:-translate-y-2 lg:hover:shadow-2xl"
               >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-950 p-3 rounded-xl">
-                    <Icon size={36} />
-                  </div>
-                  <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
-                    {service.title}
-                  </h3>
-                </div>
+                {/* ===== Hover Gradient Glow ===== */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm md:text-base">
-                  {service.longDesc}
-                </p>
+                <div className="relative z-10 flex flex-col">
+                  {/* Icon + Title */}
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-950 p-3 rounded-xl">
+                      <Icon size={36} />
+                    </div>
+                    <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                      {service.title}
+                    </h3>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm md:text-base">
+                    {service.longDesc}
+                  </p>
+                </div>
               </div>
             );
           })}
