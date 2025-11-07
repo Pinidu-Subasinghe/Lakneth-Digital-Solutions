@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react"; // ✅ Import added
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -12,8 +13,8 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-  <Header />
-  <main className="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-100">
+      <Header />
+      <main className="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-100">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
@@ -23,6 +24,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <Analytics /> {/* ✅ Add this just before closing Router */}
     </Router>
   );
 }
