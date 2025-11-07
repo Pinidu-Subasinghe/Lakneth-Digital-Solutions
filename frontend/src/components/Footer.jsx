@@ -8,17 +8,25 @@ import {
   Instagram,
   Linkedin,
 } from "lucide-react";
+import laknethLogo from "../assets/Lakneth Logo.png"; // ✅ logo path inside src/assets/
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700">
+    <footer className="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300">
       <div className="max-w-7xl mx-auto px-6 py-16 grid gap-10 sm:grid-cols-2 md:grid-cols-4">
-        {/* ===== COMPANY INFO ===== */}
-        <div>
-          <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-3">
-            Lakneth Digital Solutions
-          </h2>
-          <p className="text-sm leading-relaxed">
+        {/* ===== COMPANY INFO + LOGO ===== */}
+        <div className="flex flex-col items-start text-left">
+          <div className="flex items-center gap-3 mb-3">
+            <img
+              src={laknethLogo}
+              alt="Lakneth Digital Solutions Logo"
+              className="w-12 h-12 object-contain rounded-lg shadow-sm"
+            />
+            <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+              Lakneth Digital Solutions
+            </h2>
+          </div>
+          <p className="text-sm leading-relaxed max-w-xs">
             Empowering Sri Lankan businesses with innovative digital strategies,
             modern web design, and creative marketing solutions.
           </p>
@@ -84,12 +92,14 @@ export default function Footer() {
                 size={16}
                 className="text-blue-600 dark:text-blue-400 mt-1"
               />
-              <span>112/H/13, Raja Samaranayaka Mawatha, Alubomulla, Panadura</span>
+              <span>
+                112/H/13, Raja Samaranayaka Mawatha, Alubomulla, Panadura
+              </span>
             </li>
             <li className="flex items-center gap-2">
               <Phone size={16} className="text-blue-600 dark:text-blue-400" />
               <a
-                href="tel:+94761234567"
+                href="tel:+94756343816"
                 className="hover:text-blue-600 dark:hover:text-blue-400 transition"
               >
                 +94 75 634 3816
@@ -112,12 +122,11 @@ export default function Footer() {
         </div>
 
         {/* ===== SOCIALS ===== */}
-        <div>
+        <div className="flex flex-col items-center md:items-start">
           <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">
             Follow Us
           </h3>
-
-          <div className="flex gap-5 justify-center md:justify-start">
+          <div className="flex gap-5">
             <a
               href="https://web.facebook.com/people/Lakneth-Digital-Social-Media-Marketing/100064813908325/"
               target="_blank"
@@ -152,7 +161,7 @@ export default function Footer() {
       </div>
 
       {/* ===== COPYRIGHT BAR ===== */}
-      <div className="border-t border-gray-300 dark:border-gray-700 text-center py-4 text-sm">
+      <div className="text-center py-4 text-sm">
         <p>
           © {new Date().getFullYear()}{" "}
           <span className="text-blue-600 dark:text-blue-400 font-medium">

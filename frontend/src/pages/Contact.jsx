@@ -70,7 +70,7 @@ export default function Contact() {
             <li className="flex items-start gap-3">
               <Phone className="text-blue-600 dark:text-blue-400 mt-1" size={20} />
               <a
-                href="tel:+94761234567"
+                href="tel:+94756343816"
                 className="hover:text-blue-600 dark:hover:text-blue-400 transition"
               >
                 +94 75 634 3816

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { ChevronUp } from "lucide-react";
-import heroImg from "../../assets/consult.svg";
+import heroImg from "../../assets/marketing2.png";
 
 export default function HeroSection() {
   const [showTop, setShowTop] = useState(false);
@@ -33,13 +33,14 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative flex items-center justify-center bg-gradient-to-br from-indigo-600 via-blue-600 to-purple-700 dark:from-gray-900 dark:via-indigo-900 dark:to-blue-900 text-white overflow-hidden"
+      className="relative flex items-center justify-center bg-gradient-to-br from-sky-700 via-indigo-600 to-emerald-500 dark:from-slate-900 dark:via-indigo-900 dark:to-blue-900 text-white overflow-hidden"
       style={{ height: heroHeight }}
     >
-      {/* Glow overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent_70%)]"></div>
+      {/* Layered glow overlays for a modern look */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_25%,rgba(255,255,255,0.08),transparent_40%)] pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(255,255,255,0.04),transparent_30%)] mix-blend-overlay pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto w-full px-6 flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-6 flex flex-col-reverse md:flex-row items-center justify-between gap-12 relative z-10">
         {/* Left Side */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -47,25 +48,23 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
           className="md:w-1/2 text-center md:text-left"
         >
-          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-            Transform Your{" "}
-            <span className="text-yellow-300">Digital Presence</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4">
+            Transform Your <span className="text-yellow-300">Digital Presence</span>
           </h1>
-          <p className="text-lg md:text-xl text-blue-100 mb-8">
-            We craft modern, results-driven web and marketing solutions that
-            help your business grow faster in the digital era.
+          <p className="text-base sm:text-lg md:text-xl text-blue-100/90 mb-6 max-w-2xl mx-auto md:mx-0">
+            Modern web design, targeted marketing, and measurable growth — crafted to help your business scale.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
             <Link
               to="/contact"
-              className="bg-white text-blue-700 font-semibold px-8 py-3 rounded-full shadow hover:shadow-lg transition"
+              className="inline-flex items-center justify-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:brightness-110 transition"
             >
               Get Started
             </Link>
             <Link
               to="/services"
-              className="border border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-blue-600 transition"
+              className="inline-flex items-center justify-center border border-white/30 text-white px-6 py-3 rounded-full hover:bg-white/5 transition"
             >
               Explore Services
             </Link>
@@ -75,20 +74,20 @@ export default function HeroSection() {
         {/* Right Side */}
         {/* Hero Image — hidden on mobile, visible on md+ */}
         <motion.div
-          initial={{ opacity: 0, x: 60 }}
+          initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          className="hidden md:flex justify-center items-center relative w-full md:w-1/2"
+          transition={{ duration: 0.9 }}
+          className="w-full md:w-1/2 flex justify-center items-center relative"
         >
           {/* Soft glowing background circle */}
-          <div className="absolute w-[520px] h-[520px] bg-blue-500/25 dark:bg-blue-400/20 blur-3xl rounded-full -z-10"></div>
+          <div className="absolute w-[420px] h-[420px] bg-white/10 dark:bg-white/5 blur-3xl rounded-full -z-10"></div>
 
-          {/* Floating animated hero image */}
+          {/* Modern marketing image — visible on small screens below text, and beside text on md+ */}
           <motion.img
             src={heroImg}
             alt="Digital Growth"
-            className="w-[560px] lg:w-[600px] drop-shadow-2xl"
-            animate={{ y: [0, -10, 0] }}
+            className="w-full max-w-[500px] sm:max-w-[420px] md:max-w-[520px] drop-shadow-2xl"
+            animate={{ y: [0, -8, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           />
         </motion.div>

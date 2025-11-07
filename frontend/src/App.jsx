@@ -12,8 +12,8 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <Header />
-      <main className="min-h-screen bg-gray-50 text-gray-800">
+  <Header />
+  <main className="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-100">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
