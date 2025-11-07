@@ -5,15 +5,37 @@ import seoIcon from "../../assets/seo.png";
 import likeIcon from "../../assets/like.png";
 import servicesData from "../../data/services.json";
 
-// swapped order: coding, sms, seo, like
+// keep order: coding, sms, seo, like
 const icons = [codingIcon, smsIcon, seoIcon, likeIcon];
 
 export default function FeaturesSection() {
   const services = servicesData.slice(0, 4);
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950">
-      <div className="max-w-6xl mx-auto px-6 text-center">
+    <section className="relative py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950 overflow-hidden">
+      {/* ===== Floating Decorative Icons (Larger & Soft) ===== */}
+      <img
+        src={codingIcon}
+        alt="Decorative coding icon"
+        className="hidden lg:block absolute left-10 top-16 w-36 xl:w-40 opacity-10 animate-float-slow"
+      />
+      <img
+        src={smsIcon}
+        alt="Decorative sms icon"
+        className="hidden lg:block absolute right-14 bottom-16 w-40 xl:w-44 opacity-10 animate-float-slow"
+      />
+      <img
+        src={seoIcon}
+        alt="Decorative seo icon"
+        className="hidden lg:block absolute left-1/2 bottom-0 w-32 xl:w-36 opacity-10 animate-float-slow"
+      />
+      <img
+        src={likeIcon}
+        alt="Decorative like icon"
+        className="hidden lg:block absolute right-1/4 top-6 w-32 xl:w-36 opacity-10 animate-float-slow"
+      />
+
+      <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
         {/* Section Title */}
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
           Our Core Services
