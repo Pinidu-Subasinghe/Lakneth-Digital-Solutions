@@ -14,7 +14,8 @@ function App() {
     <Router>
       <ScrollToTop />
       <Header />
-      <main className="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-100">
+
+      <main className="py-6 bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-100">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
@@ -23,10 +24,12 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
+
       <Footer />
-      <Analytics /> {/* ✅ Add this just before closing Router */}
+      <Analytics />
     </Router>
   );
 }
+
 
 export default App;
