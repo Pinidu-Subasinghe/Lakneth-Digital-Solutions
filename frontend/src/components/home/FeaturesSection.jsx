@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import codingIcon from "../../assets/coding.png";
+import fb from "../../assets/fb.png";
 import smsIcon from "../../assets/sms.png";
 import seoIcon from "../../assets/seo.png";
-import likeIcon from "../../assets/like.png";
+import coding from "../../assets/coding.png";
 import servicesData from "../../data/services.json";
 
-// keep order: coding, sms, seo, like
-const icons = [codingIcon, smsIcon, seoIcon, likeIcon];
+// keep order: coding, sms, seo
+const icons = [fb, coding, smsIcon, seoIcon];
 
 export default function FeaturesSection() {
   const services = servicesData.slice(0, 4);
@@ -15,8 +15,8 @@ export default function FeaturesSection() {
     <section className="relative py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950 overflow-hidden">
       {/* ===== Floating Decorative Icons (Larger & Soft) ===== */}
       <img
-        src={codingIcon}
-        alt="Decorative coding icon"
+        src={fb}
+        alt="Facebook icon"
         className="hidden lg:block absolute left-10 top-16 w-36 xl:w-40 opacity-10 animate-float-slow"
       />
       <img
@@ -25,13 +25,13 @@ export default function FeaturesSection() {
         className="hidden lg:block absolute right-14 bottom-16 w-40 xl:w-44 opacity-10 animate-float-slow"
       />
       <img
-        src={seoIcon}
+        src={smsIcon}
         alt="Decorative seo icon"
         className="hidden lg:block absolute left-1/2 bottom-0 w-32 xl:w-36 opacity-10 animate-float-slow"
       />
       <img
-        src={likeIcon}
-        alt="Decorative like icon"
+        src={coding}
+        alt="Decorative coding icon"
         className="hidden lg:block absolute right-1/4 top-6 w-32 xl:w-36 opacity-10 animate-float-slow"
       />
 

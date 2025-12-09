@@ -1,37 +1,44 @@
 [
   {
     "id": 1,
-    "icon": "Monitor",
-    "title": "Web Design & Development",
-    "shortDesc": "Custom, responsive, and SEO-optimized websites that bring your business online.",
-    "longDesc": "We design and build tailored websites optimized for all devices and search engines. Our process includes UX research, visual design, and modern frontend development with React or Next.js to ensure speed, scalability, and a seamless user experience."
+    "icon": "Megaphone",
+    "title": "Facebook Page Selling",
+    "shortDesc": "High-converting Facebook business pages that attract customers and boost sales.",
+    "route": "/facebook-selling"
   },
   {
     "id": 2,
-    "icon": "MessageCircle",
-    "title": "SMS & Email Marketing",
-    "shortDesc": "Connect with your audience through personalized SMS and email campaigns that drive engagement.",
-    "longDesc": "Our SMS & Email Marketing solutions help your business maintain customer relationships with precision-targeted messages, automation workflows, and insightful analytics. Increase conversions and retention through timely, relevant communication across every touchpoint."
+    "icon": "Monitor",
+    "title": "Web Design & Development",
+    "shortDesc": "Custom, responsive, and SEO-optimized websites for any business.",
+    "route": "/web-design"
   },
   {
     "id": 3,
-    "icon": "BarChart2",
-    "title": "SEO & Analytics",
-    "shortDesc": "Enhance visibility, attract organic traffic, and measure success effectively.",
-    "longDesc": "We offer comprehensive on-page and off-page SEO strategies, keyword optimization, and detailed performance analytics. Our team ensures your site ranks higher while providing real-time insights on visitor trends and campaign performance."
+    "icon": "MessageCircle",
+    "title": "SMS & Email Marketing",
+    "shortDesc": "Personalized campaigns that drive engagement and conversions.",
+    "route": "/sms-email"
   },
   {
     "id": 4,
-    "icon": "Share2",
-    "title": "Social Media Marketing",
-    "shortDesc": "Boost engagement with powerful content strategies and ad campaigns.",
-    "longDesc": "We create and manage social media campaigns that amplify your brand voice, increase engagement, and grow your customer base. From creative content to targeted ads, we make your social presence impactful and measurable."
+    "icon": "BarChart2",
+    "title": "SEO & Analytics",
+    "shortDesc": "Increase search ranking and track performance with precision.",
+    "route": "/seo-analytics"
   },
   {
     "id": 5,
+    "icon": "Share2",
+    "title": "Social Media Marketing",
+    "shortDesc": "Grow your brand with powerful content strategies and ads.",
+    "route": "/social-marketing"
+  },
+  {
+    "id": 6,
     "icon": "PenTool",
     "title": "Logo Design & Branding",
-    "shortDesc": "Create a lasting impression with a unique logo and cohesive brand identity.",
-    "longDesc": "Our Logo Design & Branding services focus on crafting a distinctive brand identity that resonates with your target audience. We work closely with you to understand your vision and values, translating them into a compelling visual identity that stands out in the market."
+    "shortDesc": "Build a strong brand identity with professional design.",
+    "route": "/branding"
   }
 ]

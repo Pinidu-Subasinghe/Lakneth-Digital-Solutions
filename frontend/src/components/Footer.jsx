@@ -64,14 +64,6 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                to="/packages"
-                className="hover:text-blue-600 dark:hover:text-blue-400 transition"
-              >
-                Packages
-              </Link>
-            </li>
-            <li>
-              <Link
                 to="/contact"
                 className="hover:text-blue-600 dark:hover:text-blue-400 transition"
               >

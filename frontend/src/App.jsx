@@ -6,8 +6,8 @@ import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
-import Packages from "./pages/Packages";
 import Contact from "./pages/Contact";
+import FacebookSelling from "./pages/FacebookSelling";
 
 function App() {
   return (
@@ -18,8 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/facebook-selling" element={<FacebookSelling />} />
           <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/packages" element={<Packages />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>

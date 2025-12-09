@@ -20,7 +20,6 @@ export default function Header() {
     { to: "/", label: "Home" },
     { to: "/services", label: "Services" },
     { to: "/portfolio", label: "Portfolio" },
-    { to: "/packages", label: "Packages" },
     { to: "/contact", label: "Contact" },
   ];
 
