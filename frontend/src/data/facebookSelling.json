@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Magadige",
-    "categories": ["Travel", "Environment", "Shopping"],
+    "categories": ["Travel"],
     "likes": 10500,
     "price": 45000,
     "url": "https://www.facebook.com/magadige",
@@ -11,7 +11,7 @@
   {
     "id": 2,
     "name": "The Smartphone Shop",
-    "categories": ["Phone", "Accessories", "Lifestyle"],
+    "categories": ["Phone"],
     "likes": 7200,
     "price": 32000,
     "url": "https://facebook.com/smartphonelk",
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "name": "Hutch Sri Lanka",
-    "categories": ["Internet", "Communication"],
+    "categories": ["Communication"],
     "likes": 9800,
     "price": 38000,
     "url": "https://facebook.com/hutchsrilanka",
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "name": "SIGAr",
-    "categories": ["Electronics", "Tech", "Shopping"],
+    "categories": ["Nikan"],
     "likes": 10500,
     "price": 45000,
     "url": "https://www.facebook.com/page.SIGAr",
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "name": "Bybit",
-    "categories": ["Finance", "Crypto", "Bitcoin"],
+    "categories": ["Crypto"],
     "likes": 10500,
     "price": 45000,
     "url": "https://www.facebook.com/Bybit",
@@ -47,7 +47,7 @@
   {
     "id": 6,
     "name": "AdamW",
-    "categories": ["Comedy", "Fun", "Shopping"],
+    "categories": ["Comedy"],
     "likes": 10500,
     "price": 45000,
     "url": "https://www.facebook.com/adamw",
