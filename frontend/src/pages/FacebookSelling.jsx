@@ -52,7 +52,7 @@ const openWhatsApp = (page) => {
   );
 };
 
-/* FILTER PANEL */
+/* FILTER PANEL COMPONENT */
 function FilterPanel({
   minPrice,
   maxPrice,
@@ -65,6 +65,8 @@ function FilterPanel({
   category,
   setCategory,
   categories,
+  onClearFilters,
+  errors,
 }) {
   return (
     <div className="w-full h-full overflow-y-auto pb-10">
@@ -82,20 +84,33 @@ function FilterPanel({
           </div>
 
           <div className="grid grid-cols-2 gap-3">
-            <input
-              type="number"
-              placeholder="Min"
-              value={minPrice}
-              onChange={(e) => setMinPrice(e.target.value)}
-              className="p-2 rounded-lg bg-white dark:bg-gray-700 shadow-sm"
-            />
-            <input
-              type="number"
-              placeholder="Max"
-              value={maxPrice}
-              onChange={(e) => setMaxPrice(e.target.value)}
-              className="p-2 rounded-lg bg-white dark:bg-gray-700 shadow-sm"
-            />
+            <div>
+              <input
+                type="number"
+                placeholder="Min"
+                value={minPrice}
+                onChange={(e) => setMinPrice(e.target.value)}
+                onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
+                className="p-2 rounded-lg bg-white dark:bg-gray-700 shadow-sm w-full"
+              />
+              {errors.minPrice && (
+                <p className="text-red-500 text-sm">{errors.minPrice}</p>
+              )}
+            </div>
+
+            <div>
+              <input
+                type="number"
+                placeholder="Max"
+                value={maxPrice}
+                onChange={(e) => setMaxPrice(e.target.value)}
+                onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
+                className="p-2 rounded-lg bg-white dark:bg-gray-700 shadow-sm w-full"
+              />
+              {errors.maxPrice && (
+                <p className="text-red-500 text-sm">{errors.maxPrice}</p>
+              )}
+            </div>
           </div>
         </div>
 
@@ -107,20 +122,33 @@ function FilterPanel({
           </div>
 
           <div className="grid grid-cols-2 gap-3">
-            <input
-              type="number"
-              placeholder="Min"
-              value={minLikes}
-              onChange={(e) => setMinLikes(e.target.value)}
-              className="p-2 rounded-lg bg-white dark:bg-gray-700 shadow-sm"
-            />
-            <input
-              type="number"
-              placeholder="Max"
-              value={maxLikes}
-              onChange={(e) => setMaxLikes(e.target.value)}
-              className="p-2 rounded-lg bg-white dark:bg-gray-700 shadow-sm"
-            />
+            <div>
+              <input
+                type="number"
+                placeholder="Min"
+                value={minLikes}
+                onChange={(e) => setMinLikes(e.target.value)}
+                onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
+                className="p-2 rounded-lg bg-white dark:bg-gray-700 shadow-sm w-full"
+              />
+              {errors.minLikes && (
+                <p className="text-red-500 text-sm">{errors.minLikes}</p>
+              )}
+            </div>
+
+            <div>
+              <input
+                type="number"
+                placeholder="Max"
+                value={maxLikes}
+                onChange={(e) => setMaxLikes(e.target.value)}
+                onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
+                className="p-2 rounded-lg bg-white dark:bg-gray-700 shadow-sm w-full"
+              />
+              {errors.maxLikes && (
+                <p className="text-red-500 text-sm">{errors.maxLikes}</p>
+              )}
+            </div>
           </div>
         </div>
 
@@ -142,6 +170,14 @@ function FilterPanel({
             ))}
           </select>
         </div>
+
+        {/* CLEAR FILTERS BUTTON */}
+        <button
+          onClick={onClearFilters}
+          className="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg shadow font-medium"
+        >
+          Clear Filters
+        </button>
       </div>
     </div>
   );
@@ -158,27 +194,56 @@ export default function FacebookSelling() {
   const [maxLikes, setMaxLikes] = useState("");
   const [category, setCategory] = useState("");
 
-  /* CORRECT CATEGORY LIST */
+  /* VALIDATION (NO STATE UPDATE INSIDE RENDER → no re-render loop) */
+  const validateFields = () => {
+    let newErrors = {};
+
+    const invalid = (v) =>
+      v !== "" && (Number(v) <= 0 || isNaN(Number(v)));
+
+    if (invalid(minPrice)) newErrors.minPrice = "Enter a valid number above 0";
+    if (invalid(maxPrice)) newErrors.maxPrice = "Enter a valid number above 0";
+    if (invalid(minLikes)) newErrors.minLikes = "Enter a valid number above 0";
+    if (invalid(maxLikes)) newErrors.maxLikes = "Enter a valid number above 0";
+
+    return newErrors;
+  };
+
+  const errors = validateFields();
+  const isValid = Object.keys(errors).length === 0;
+
+  /* CLEAR FILTERS */
+  const clearFilters = () => {
+    setMinPrice("");
+    setMaxPrice("");
+    setMinLikes("");
+    setMaxLikes("");
+    setCategory("");
+  };
+
+  /* CATEGORY LIST */
   const allCategories = Array.from(
     new Set(fbData.flatMap((p) => p.categories))
   ).sort();
 
-  /* FULLY FIXED FILTER SYSTEM */
-  const filteredPages = fbData.filter((p) => {
-    const priceMatch =
-      (!minPrice || p.price >= Number(minPrice)) &&
-      (!maxPrice || p.price <= Number(maxPrice));
+  /* FILTER LOGIC (only if valid) */
+  const filteredPages = isValid
+    ? fbData.filter((p) => {
+        const priceMatch =
+          (!minPrice || p.price >= Number(minPrice)) &&
+          (!maxPrice || p.price <= Number(maxPrice));
 
-    const likesMatch =
-      (!minLikes || p.likes >= Number(minLikes)) &&
-      (!maxLikes || p.likes <= Number(maxLikes));
+        const likesMatch =
+          (!minLikes || p.likes >= Number(minLikes)) &&
+          (!maxLikes || p.likes <= Number(maxLikes));
 
-    const categoryMatch = !category || p.categories.includes(category);
+        const categoryMatch = !category || p.categories.includes(category);
 
-    return priceMatch && likesMatch && categoryMatch;
-  });
+        return priceMatch && likesMatch && categoryMatch;
+      })
+    : fbData;
 
-  /* ANIMATION LOGIC */
+  /* MOBILE ANIMATIONS */
   const openDrawer = () => {
     setClosing(false);
     setFiltersOpen(true);
@@ -226,6 +291,8 @@ export default function FacebookSelling() {
           category={category}
           setCategory={setCategory}
           categories={allCategories}
+          onClearFilters={clearFilters}
+          errors={errors}
         />
       </aside>
 
@@ -255,6 +322,8 @@ export default function FacebookSelling() {
               category={category}
               setCategory={setCategory}
               categories={allCategories}
+              onClearFilters={clearFilters}
+              errors={errors}
             />
           </div>
 
