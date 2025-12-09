@@ -68,7 +68,7 @@ function FilterPanel({
 }) {
   return (
     <div className="w-full h-full overflow-y-auto pb-10">
-      <div className="flex items-center gap-3 pb-4 px-4 border-b border-gray-200 dark:border-gray-700">
+      <div className="flex items-center gap-3 pb-4 px-4 border-b border-gray-200 dark:border-gray-700 pt-4">
         <SlidersHorizontal className="text-blue-600" size={22} />
         <h3 className="text-2xl font-bold">Filters</h3>
       </div>
@@ -195,7 +195,7 @@ export default function FacebookSelling() {
   return (
     <section className="relative bg-gray-50 dark:bg-gray-900 min-h-screen">
       {/* HEADER */}
-      <div className="flex justify-between items-center px-6 md:ml-[300px] pt-10 mb-5">
+      <div className="flex justify-between items-center px-6 md:ml-[300px] pt-6 mb-5">
         <h1 className="text-4xl font-bold">Facebook Page Selling</h1>
         <button
           onClick={openDrawer}
