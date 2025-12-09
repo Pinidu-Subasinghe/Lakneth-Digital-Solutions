@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "name": "Tech Deals Sri Lanka",
-    "categories": ["Electronics", "Tech", "Shopping"],
+    "name": "Magadige",
+    "categories": ["Travel", "Environment", "Shopping"],
     "likes": 10500,
     "price": 45000,
-    "url": "https://www.facebook.com/laknethdigital/",
+    "url": "https://www.facebook.com/magadige",
     "image": "/pages/techdeals.jpg"
   },
   {
@@ -28,29 +28,29 @@
   },
   {
     "id": 4,
-    "name": "Tech Deals Sri Lanka",
+    "name": "SIGAr",
     "categories": ["Electronics", "Tech", "Shopping"],
     "likes": 10500,
     "price": 45000,
-    "url": "https://www.facebook.com/laknethdigital/",
+    "url": "https://www.facebook.com/page.SIGAr",
     "image": "/pages/techdeals.jpg"
   },
   {
     "id": 5,
-    "name": "The Smartphone Shop",
-    "categories": ["Phone", "Accessories", "Lifestyle"],
-    "likes": 7200,
-    "price": 32000,
-    "url": "https://facebook.com/smartphonelk",
-    "image": "/pages/phone.jpg"
+    "name": "Bybit",
+    "categories": ["Finance", "Crypto", "Bitcoin"],
+    "likes": 10500,
+    "price": 45000,
+    "url": "https://www.facebook.com/Bybit",
+    "image": "/pages/techdeals.jpg"
   },
   {
     "id": 6,
-    "name": "Hutch Sri Lanka",
-    "categories": ["Internet", "Communication"],
-    "likes": 9800,
-    "price": 38000,
-    "url": "https://facebook.com/hutchsrilanka",
-    "image": "/pages/hutch.jpg"
+    "name": "AdamW",
+    "categories": ["Comedy", "Fun", "Shopping"],
+    "likes": 10500,
+    "price": 45000,
+    "url": "https://www.facebook.com/adamw",
+    "image": "/pages/techdeals.jpg"
   }
 ]
