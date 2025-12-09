@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 /* CONSTANTS */
-const HEADER_HEIGHT = 70;
+const HEADER_HEIGHT = 68;
 
 /* GET USERNAME FROM URL */
 const getFacebookUsername = (url) => {
