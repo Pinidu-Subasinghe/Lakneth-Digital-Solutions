@@ -85,3 +85,19 @@ body {
     box-shadow: none !important;
   }
 }
+/* GLOBAL HERO HEIGHT FIX — Works on ALL devices */
+.full-screen-section {
+  height: 100dvh;       /* Best for modern browsers / iOS */
+  height: 100svh;       /* Safari small viewport */
+  min-height: 100dvh;   /* Prevent shrinking */
+  min-height: 100svh;
+  overflow: hidden;     /* Prevent next section from showing */
+}
+
+/* Fallback for older browsers */
+@supports not (height: 100dvh) {
+  .full-screen-section {
+    height: 100vh;
+    min-height: 100vh;
+  }
+}

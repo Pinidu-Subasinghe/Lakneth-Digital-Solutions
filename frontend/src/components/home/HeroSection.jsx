@@ -40,22 +40,17 @@ export default function HeroSection() {
   return (
     <section
       style={{ height: heroHeight }}
-      className="
-        relative 
-        flex items-center justify-center 
-        bg-gradient-to-br 
-        from-sky-700 via-indigo-600 to-emerald-500 
-        dark:from-slate-900 dark:via-indigo-900 dark:to-blue-900 
-        text-white 
-        overflow-hidden
-      "
+      className="relative flex items-center justify-center 
+  bg-gradient-to-br 
+  from-sky-700 via-indigo-600 to-emerald-500 
+  dark:from-slate-900 dark:via-indigo-900 dark:to-blue-900 
+  text-white overflow-hidden"
     >
       {/* Glow Overlays */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_25%,rgba(255,255,255,0.08),transparent_40%)] pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(255,255,255,0.04),transparent_30%)] mix-blend-overlay pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto w-full px-6 flex flex-col-reverse md:flex-row items-center justify-between gap-12 relative z-10">
-
         {/* Left Side */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -64,11 +59,13 @@ export default function HeroSection() {
           className="md:w-1/2 text-center md:text-left"
         >
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4">
-            Transform Your <span className="text-yellow-300">Digital Presence</span>
+            Transform Your{" "}
+            <span className="text-yellow-300">Digital Presence</span>
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-blue-100/90 mb-6 max-w-2xl mx-auto md:mx-0">
-            Modern web design, targeted marketing, and measurable growth — crafted to help your business scale.
+            Modern web design, targeted marketing, and measurable growth —
+            crafted to help your business scale.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
