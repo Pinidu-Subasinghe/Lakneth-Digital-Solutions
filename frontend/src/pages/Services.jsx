@@ -27,7 +27,7 @@ export default function Services() {
   }, []);
 
   return (
-    <section className="relative min-h-[80vh] py-20 bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-100 overflow-hidden">
+    <section className="relative min-h-[80vh] py-20 pt-10 bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-100 overflow-hidden">
       {/* ===== Floating Decorative Icons ===== */}
       <img
         src={codingIcon}

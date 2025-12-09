@@ -2,7 +2,7 @@ import fbData from "../data/facebookSelling.json";
 
 export default function FacebookSelling() {
   return (
-    <div className="min-h-screen py-20 px-6 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <div className="min-h-screen py-20 pt-10 px-6 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <h1 className="text-4xl font-bold mb-6">Facebook Page Selling</h1>
 
       <p className="text-lg text-gray-600 dark:text-gray-300 mb-10">
