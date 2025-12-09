@@ -195,7 +195,7 @@ export default function FacebookSelling() {
   return (
     <section className="relative bg-gray-50 dark:bg-gray-900 min-h-screen">
       {/* HEADER */}
-      <div className="flex justify-between items-center px-6 md:ml-[300px] mt-10 mb-5">
+      <div className="flex justify-between items-center px-6 md:ml-[300px] pt-10 mb-5">
         <h1 className="text-4xl font-bold">Facebook Page Selling</h1>
         <button
           onClick={openDrawer}
