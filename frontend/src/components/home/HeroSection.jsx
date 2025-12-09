@@ -13,13 +13,19 @@ export default function HeroSection() {
       const header = document.querySelector("header");
       const headerHeight = header?.offsetHeight || 0;
 
-      const vh = window.innerHeight - headerHeight;
-      setHeroHeight(`${vh}px`);
+      // 💡 FIX for iPhone viewport bugs
+      const viewportHeight =
+        window.visualViewport?.height || window.innerHeight;
+
+      setHeroHeight(`${viewportHeight - headerHeight}px`);
     };
 
     updateHeight();
+
+    // Resize listener
     window.addEventListener("resize", updateHeight);
 
+    // Scroll listener
     const handleScroll = () => setShowTop(window.scrollY > 200);
     window.addEventListener("scroll", handleScroll);
 
@@ -88,24 +94,29 @@ export default function HeroSection() {
           transition={{ duration: 0.9 }}
           className="w-full md:w-1/2 flex justify-center items-center relative"
         >
-          <div className="absolute w-[420px] h-[420px] bg-white/10 dark:bg-white/5 blur-3xl rounded-full -z-10"></div>
+          <div className="absolute w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] md:w-[420px] md:h-[420px] bg-white/10 dark:bg-white/5 blur-3xl rounded-full -z-10"></div>
 
           <motion.img
             src={heroImg}
             alt="Digital Growth"
-            className="w-full max-w-[500px] sm:max-w-[420px] md:max-w-[520px] drop-shadow-2xl"
+            className="
+              w-full 
+              max-w-[280px] 
+              sm:max-w-[340px] 
+              md:max-w-[520px] 
+              drop-shadow-2xl
+            "
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           />
         </motion.div>
       </div>
 
-      {/* Scroll to Top Button */}
+      {/* Scroll to Top */}
       {showTop && (
         <button
           onClick={scrollToTop}
           className="fixed bottom-6 right-6 bg-blue-600 dark:bg-blue-500 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition z-50"
-          aria-label="Scroll to top"
         >
           <ChevronUp size={24} />
         </button>
