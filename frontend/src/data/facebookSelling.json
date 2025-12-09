@@ -1,5 +1,32 @@
 [
-  { "id": 1, "name": "Tech Deals Sri Lanka", "niche": "Electronics", "followers": "12,500" },
-  { "id": 2, "name": "Fashion Hub LK", "niche": "Clothing & Apparel", "followers": "8,900" },
-  { "id": 3, "name": "Food Lovers LK", "niche": "Food & Recipes", "followers": "15,300" }
+  {
+    "id": 1,
+    "name": "Tech Deals Sri Lanka",
+    "categories": ["Electronics", "Tech", "Shopping"],
+    "likes": 10500,
+    "followers": 12500,
+    "price": 45000,
+    "url": "https://facebook.com/techdealslk",
+    "image": "/pages/techdeals.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Fashion Hub LK",
+    "categories": ["Clothing", "Apparel", "Lifestyle"],
+    "likes": 7200,
+    "followers": 8900,
+    "price": 32000,
+    "url": "https://facebook.com/fashionhublk",
+    "image": "/pages/fashionhub.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Food Lovers LK",
+    "categories": ["Food", "Recipes", "Entertainment"],
+    "likes": 9800,
+    "followers": 15300,
+    "price": 38000,
+    "url": "https://facebook.com/foodloverslk",
+    "image": "/pages/foodlovers.jpg"
+  }
 ]
