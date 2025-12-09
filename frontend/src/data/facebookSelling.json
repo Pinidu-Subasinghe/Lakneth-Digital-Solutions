@@ -4,29 +4,53 @@
     "name": "Tech Deals Sri Lanka",
     "categories": ["Electronics", "Tech", "Shopping"],
     "likes": 10500,
-    "followers": 12500,
     "price": 45000,
     "url": "https://www.facebook.com/laknethdigital/",
     "image": "/pages/techdeals.jpg"
   },
   {
     "id": 2,
-    "name": "Fashion Hub LK",
-    "categories": ["Clothing", "Apparel", "Lifestyle"],
+    "name": "The Smartphone Shop",
+    "categories": ["Phone", "Accessories", "Lifestyle"],
     "likes": 7200,
-    "followers": 8900,
     "price": 32000,
-    "url": "https://facebook.com/fashionhublk",
-    "image": "/pages/fashionhub.jpg"
+    "url": "https://facebook.com/smartphonelk",
+    "image": "/pages/phone.jpg"
   },
   {
     "id": 3,
-    "name": "Food Lovers LK",
-    "categories": ["Food", "Recipes", "Entertainment"],
+    "name": "Hutch Sri Lanka",
+    "categories": ["Internet", "Communication"],
     "likes": 9800,
-    "followers": 15300,
     "price": 38000,
-    "url": "https://facebook.com/foodloverslk",
-    "image": "/pages/foodlovers.jpg"
+    "url": "https://facebook.com/hutchsrilanka",
+    "image": "/pages/hutch.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Tech Deals Sri Lanka",
+    "categories": ["Electronics", "Tech", "Shopping"],
+    "likes": 10500,
+    "price": 45000,
+    "url": "https://www.facebook.com/laknethdigital/",
+    "image": "/pages/techdeals.jpg"
+  },
+  {
+    "id": 5,
+    "name": "The Smartphone Shop",
+    "categories": ["Phone", "Accessories", "Lifestyle"],
+    "likes": 7200,
+    "price": 32000,
+    "url": "https://facebook.com/smartphonelk",
+    "image": "/pages/phone.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Hutch Sri Lanka",
+    "categories": ["Internet", "Communication"],
+    "likes": 9800,
+    "price": 38000,
+    "url": "https://facebook.com/hutchsrilanka",
+    "image": "/pages/hutch.jpg"
   }
 ]
