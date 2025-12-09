@@ -43,6 +43,7 @@ const openWhatsApp = (page) => {
     `Price: Rs.${page.price.toLocaleString()}\n` +
     `Page URL: ${page.url}\n\n` +
     `Please send more details.`;
+
   window.open(
     `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(
       msg
@@ -149,6 +150,7 @@ function FilterPanel({
 /* MAIN PAGE */
 export default function FacebookSelling() {
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const [closing, setClosing] = useState(false);
 
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
@@ -156,12 +158,12 @@ export default function FacebookSelling() {
   const [maxLikes, setMaxLikes] = useState("");
   const [category, setCategory] = useState("");
 
-  /* FIX: Correct category extraction */
+  /* CORRECT CATEGORY LIST */
   const allCategories = Array.from(
     new Set(fbData.flatMap((p) => p.categories))
   ).sort();
 
-  /* FIX: Fully correct filter logic */
+  /* FULLY FIXED FILTER SYSTEM */
   const filteredPages = fbData.filter((p) => {
     const priceMatch =
       (!minPrice || p.price >= Number(minPrice)) &&
@@ -171,31 +173,39 @@ export default function FacebookSelling() {
       (!minLikes || p.likes >= Number(minLikes)) &&
       (!maxLikes || p.likes <= Number(maxLikes));
 
-    const categoryMatch =
-      !category || p.categories.some((c) => c === category);
+    const categoryMatch = !category || p.categories.includes(category);
 
     return priceMatch && likesMatch && categoryMatch;
   });
 
+  /* ANIMATION LOGIC */
+  const openDrawer = () => {
+    setClosing(false);
+    setFiltersOpen(true);
+  };
+
+  const closeDrawer = () => {
+    setClosing(true);
+    setTimeout(() => {
+      setFiltersOpen(false);
+      setClosing(false);
+    }, 300);
+  };
+
   return (
     <section className="relative bg-gray-50 dark:bg-gray-900 min-h-screen">
-
       {/* HEADER */}
-      <div
-        className="flex justify-between items-center px-6 md:ml-[300px] pt-10 pb-6"
-        style={{ height: HEADER_HEIGHT }}
-      >
+      <div className="flex justify-between items-center px-6 md:ml-[300px] mt-10 mb-5">
         <h1 className="text-4xl font-bold">Facebook Page Selling</h1>
-
         <button
-          onClick={() => setFiltersOpen(true)}
+          onClick={openDrawer}
           className="md:hidden bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 shadow"
         >
           <Filter size={18} /> Filters
         </button>
       </div>
 
-      {/* DESKTOP SIDEBAR */}
+      {/* DESKTOP FILTER */}
       <aside
         className="hidden md:block fixed left-0 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700"
         style={{
@@ -222,9 +232,12 @@ export default function FacebookSelling() {
       {/* MOBILE FILTER DRAWER */}
       {filtersOpen && (
         <div className="fixed inset-0 bg-black/50 z-50 md:hidden flex">
-          <div className="w-72 bg-white dark:bg-gray-800 p-6 shadow-xl h-full animate-slide">
+          <div
+            className={`w-72 bg-white dark:bg-gray-800 p-6 shadow-xl h-full 
+              ${closing ? "animate-slide-out" : "animate-slide-in"}`}
+          >
             <button
-              onClick={() => setFiltersOpen(false)}
+              onClick={closeDrawer}
               className="flex items-center gap-2 text-red-500 mb-4"
             >
               <X size={20} /> Close
@@ -245,7 +258,7 @@ export default function FacebookSelling() {
             />
           </div>
 
-          <div className="flex-1" onClick={() => setFiltersOpen(false)}></div>
+          <div className="flex-1" onClick={closeDrawer}></div>
         </div>
       )}
 
@@ -255,7 +268,7 @@ export default function FacebookSelling() {
           {filteredPages.map((page) => (
             <div
               key={page.id}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition p-5"
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition p-5 no-hover-mobile"
             >
               <img
                 src={getHDFacebookImage(page.url)}
@@ -267,9 +280,15 @@ export default function FacebookSelling() {
               <h2 className="text-xl font-semibold mt-4">{page.name}</h2>
 
               <div className="text-gray-600 dark:text-gray-300 mt-2 space-y-1 text-sm">
-                <p><strong>Category:</strong> {page.categories.join(", ")}</p>
-                <p><strong>Likes:</strong> {page.likes.toLocaleString()}</p>
-                <p><strong>Price:</strong> Rs. {page.price.toLocaleString()}</p>
+                <p>
+                  <strong>Category:</strong> {page.categories.join(", ")}
+                </p>
+                <p>
+                  <strong>Likes:</strong> {page.likes.toLocaleString()}
+                </p>
+                <p>
+                  <strong>Price:</strong> Rs. {page.price.toLocaleString()}
+                </p>
               </div>
 
               <button
