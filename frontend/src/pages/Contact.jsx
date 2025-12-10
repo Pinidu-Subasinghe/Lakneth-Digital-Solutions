@@ -15,18 +15,25 @@ export default function Contact() {
   const handleWhatsAppSend = (e) => {
     e.preventDefault();
 
-    const whatsappMessage =
-      `🚨 New Message\n` +
+    const message =
+      `📩 *New Inquiry Message*\n` +
       `--------------------\n` +
-      `👤 Name: ${name}\n` +
-      `🅰️ Title: *${subject}*\n` +
-      `💬 Message:\n${msg}`;
+      `👤 *Name:* ${name}\n` +
+      `📝 *Subject:* ${subject}\n\n` +
+      `💬 *Message:*\n${msg}\n` +
+      `--------------------\n` +
+      `📲 _Sent via Website Contact Form_`;
 
-    const url =
-      `https://api.whatsapp.com/send?phone=${phone}&text=` +
-      encodeURIComponent(whatsappMessage);
+    const encoded = encodeURIComponent(message);
 
-    window.open(url, "_blank");
+    // Detect mobile devices
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    const mobileURL = `whatsapp://send?phone=${phone}&text=${encoded}`;
+    const desktopURL = `https://api.whatsapp.com/send?phone=${phone}&text=${encoded}`;
+
+    // Open correct WhatsApp entry point
+    window.open(isMobile ? mobileURL : desktopURL, "_blank");
   };
 
   return (
