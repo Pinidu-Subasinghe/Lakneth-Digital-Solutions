@@ -32,6 +32,12 @@ export default function WebDesign() {
     );
   };
 
+  const categoryColors = {
+    Bronze: "bg-amber-600/15 text-amber-700 border-amber-600/30",
+    Silver: "bg-gray-400/15 text-gray-700 border-gray-400/40",
+    Gold: "bg-yellow-500/20 text-yellow-700 border-yellow-500/40",
+  };
+
   return (
     <section className="min-h-screen px-6 py-12 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
       <div className="max-w-5xl mx-auto">
@@ -59,10 +65,14 @@ export default function WebDesign() {
                 key={pkg.id}
                 className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700 flex flex-col"
               >
-                {/* CATEGORY */}
-                <span className="text-sm font-bold text-blue-600 dark:text-blue-400">
+                {/* CATEGORY LABEL */}
+                <div
+                  className={`w-fit px-3 py-1 rounded-full text-xs font-semibold border ${
+                    categoryColors[pkg.category]
+                  }`}
+                >
                   {pkg.category} Package
-                </span>
+                </div>
 
                 {/* TITLE - FIXED HEIGHT */}
                 <h3 className="text-xl font-semibold mt-2 h-14">{pkg.title}</h3>
