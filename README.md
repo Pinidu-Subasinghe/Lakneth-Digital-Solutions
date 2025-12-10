@@ -1,105 +1,55 @@
-# 🚀 Lakneth Digital Solutions – Full Website Codebase
+# 🚀 Lakneth Digital Solutions Marketplace
 
-A modern, fast, and fully responsive service marketplace built using React + TailwindCSS, designed for selling Facebook pages, SEO packages, Branding packages, Social Media Marketing packages, and Web development packages.
+A modern, fast, and fully responsive service marketplace built with **React + TailwindCSS**. This platform is designed for selling digital assets and professional services, including Facebook Pages, SEO Packages, Branding Packages, Social Media Marketing, and Web Development.
 
-This platform includes a clean UI, dynamic filters, automatic WhatsApp messaging, discount labels, verified badges, and mobile-optimized layouts.
----------------------------------------------------------
-# 🌐 Live Features Overview
-✔️ 1. Facebook Page Selling Section
+It features a clean user interface, dynamic filtering, automatic device-aware WhatsApp messaging, integrated discount labels, and verification badges.
 
-● HD profile image fetched via Facebook Graph API
-● Page quality indicators:
-🟢 No Issues | 🟡 Warnings | 🔴 Restricted | ⚫ Unpublished
-● Verified badge support (verified.png)
-● Discount percentage ribbon
-● Price calculator (with discount logic)
-● Instant WhatsApp inquiry with full page details
----------------------------------------------------------
-✔️ 2. Service Packages Marketplace
+## ✨ Live Features Overview
 
-# Includes:
-● Web Development Packages
-● SEO Packages
-● Social Media Marketing Packages
-● Branding Packages
+### 1. Facebook Page Selling Section
+A dedicated section for listing and selling Facebook Pages with key feature indicators:
 
-# Each package includes:
+* **HD Profile Image:** Fetched dynamically via the **Facebook Graph API**.
+* **Page Quality Indicators:** Visual cues for page status:
+    * 🟢 `No Issues`
+    * 🟡 `Warnings`
+    * 🔴 `Restricted`
+    * ⚫ `Unpublished`
+* **Verification Support:** Display of a `verified.png` badge for authenticity.
+* **Pricing Logic:** Includes a price calculator with automatic discount application.
+* **Instant Inquiry:** Direct WhatsApp chat with full page details pre-filled.
 
-● Category label
-● Title + short description
-● Original & discounted pricing
-● Automatic discount badge
-● “Read More” modal
-● WhatsApp auto-message with device detection
----------------------------------------------------------
-✔️ 3. WhatsApp Auto Inquiry System
+### 2. Service Packages Marketplace
+A unified marketplace covering four key digital service areas:
 
-Fully universal WhatsApp message generator with:
+* **Web Development Packages**
+* **SEO Packages**
+* **Social Media Marketing Packages**
+* **Branding Packages**
 
-● Emojis
-● Professional formatting
-# Device detection →
-📱 Mobile → opens WhatsApp App
-💻 Desktop → opens WhatsApp Web
-● Auto-built package/page details
----------------------------------------------------------
-# 🛠️ Tech Stack
-● Frontend          React.js (Vite)
-● Styling           Tailwind CSS + Custom Components
-● Icons             Lucide React Icons
-● Logic             JavaScript ES6
-● Data Source       JSON datasets
-● Utilities         WhatsApp Message API, Facebook Graph Image Fetch
----------------------------------------------------------
-# 📂 Project Structure
-src/
- ├── assets/
- │    ├── verified.png
- │    ├── placeholder_fb.png
- │    └── ...images
- ├── components/
- │    ├── PackageCard.jsx
- │    ├── FilterPanel.jsx
- │    └── Modal.jsx
- ├── data/
- │    ├── facebookSelling.json
- │    └── packages.json
- ├── pages/
- │    ├── FacebookSelling.jsx
- │    ├── WebPackages.jsx
- │    ├── SeoPackages.jsx
- │    ├── BrandingPackages.jsx
- │    └── Contact.jsx
- ├── utils/
- │    ├── whatsapp.js
- │    └── facebook.js
- └── App.jsx
----------------------------------------------------------
-# ⭐ Highlighted Code Features
-# 🔵 HD Facebook Image Fetch
-const getHDFacebookImage = (url) => {
-  const username = getFacebookUsername(url);
-  return `https://graph.facebook.com/${username}/picture?type=large&width=720&height=720`;
-};
+**Each Package Card Includes:**
 
-# 🟢 Universal WhatsApp Message (Device Auto-Detect)
-const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+* Category label, Title, and a Short Description.
+* Original and Discounted Pricing.
+* Automatic Discount Badge/Ribbon.
+* Detailed **"Read More"** modal for package specifics.
+* **WhatsApp Auto-Message** for instant, device-detected inquiries.
 
-window.open(
-  isMobile ? mobileURL : desktopURL,
-  "_blank"
-);
+### 3. Universal WhatsApp Auto Inquiry System
+A robust system for generating professional, formatted inquiry messages with emojis, ensuring seamless communication:
 
-# 🟡 Discount Badge
-{pkg.discount > 0 && (
-  <div className="absolute top-3 right-3 bg-pink-600 text-white text-xs px-2 py-1 font-bold rounded-lg shadow">
-    -{pkg.discount}%
-  </div>
-)}
----------------------------------------------------------
-📱 Responsive Design
-Fully optimized for:
-● Desktop monitors
-● Tablets
-● iPhones / Android
-● Dark mode & light mode
+* **Professional Formatting:** Auto-built with specific package/page details.
+* **Device Detection:** Automatically routes the user:
+    * **📱 Mobile:** Opens the native WhatsApp Application.
+    * **💻 Desktop:** Opens **WhatsApp Web**.
+
+## 🛠️ Tech Stack
+
+| Category | Technology |
+| :--- | :--- |
+| **Frontend** | React.js (Vite) |
+| **Styling** | Tailwind CSS + Custom Components |
+| **Icons** | Lucide React Icons |
+| **Logic** | JavaScript ES6 |
+| **Data Source** | JSON Datasets |
+| **Utilities** | WhatsApp Message API, Facebook Graph API |
