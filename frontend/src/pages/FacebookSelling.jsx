@@ -343,7 +343,7 @@ export default function FacebookSelling() {
                     </span>
                   </div>
                 ) : (
-                  <span className="font-semibold text-gray-900 dark:text-gray-200 text-lg">
+                  <span className="font-bold text-gray-900 dark:text-gray-200 text-lg">
                     Rs. {page.price.toLocaleString()}
                   </span>
                 )}
