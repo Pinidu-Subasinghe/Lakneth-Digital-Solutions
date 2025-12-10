@@ -4,41 +4,41 @@
     "icon": "Megaphone",
     "title": "Facebook Page Selling",
     "shortDesc": "High-converting Facebook business pages that attract customers and boost sales.",
-    "route": "/facebook-selling"
+    "route": "/services/facebook-selling"
   },
   {
     "id": 2,
     "icon": "Monitor",
     "title": "Web Design & Development",
     "shortDesc": "Custom, responsive, and SEO-optimized websites for any business.",
-    "route": "/web-design"
+    "route": "/services/web-design"
   },
   {
     "id": 3,
     "icon": "MessageCircle",
     "title": "SMS & Email Marketing",
     "shortDesc": "Personalized campaigns that drive engagement and conversions.",
-    "route": "/sms-email"
+    "route": "/services/sms-email"
   },
   {
     "id": 4,
     "icon": "BarChart2",
     "title": "SEO & Analytics",
     "shortDesc": "Increase search ranking and track performance with precision.",
-    "route": "/seo-analytics"
+    "route": "/services/seo-analytics"
   },
   {
     "id": 5,
     "icon": "Share2",
     "title": "Social Media Marketing",
     "shortDesc": "Grow your brand with powerful content strategies and ads.",
-    "route": "/social-marketing"
+    "route": "/services/social-marketing"
   },
   {
     "id": 6,
     "icon": "PenTool",
     "title": "Logo Design & Branding",
     "shortDesc": "Build a strong brand identity with professional design.",
-    "route": "/branding"
+    "route": "/services/branding"
   }
 ]

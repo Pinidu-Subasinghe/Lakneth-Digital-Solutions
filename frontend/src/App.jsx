@@ -14,7 +14,6 @@ import SEOAnalytics from "./pages/SeoAnalytics";
 import SocialMarketing from "./pages/SocialMarketing";
 import Branding from "./pages/Branding";
 
-
 function App() {
   return (
     <Router>
@@ -24,12 +23,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/facebook-selling" element={<FacebookSelling />} />
-          <Route path="/web-design" element={<WebDesign />} />
-          <Route path="/sms-email" element={<SMSEmail />} />
-          <Route path="/seo-analytics" element={<SEOAnalytics />} />
-          <Route path="/social-marketing" element={<SocialMarketing />} />
-          <Route path="/branding" element={<Branding />} />
+
+          <Route path="/services/facebook-selling" element={<FacebookSelling />} />
+          <Route path="/services/web-design" element={<WebDesign />} />
+          <Route path="/services/sms-email" element={<SMSEmail />} />
+          <Route path="/services/seo-analytics" element={<SEOAnalytics />} />
+          <Route path="/services/social-marketing" element={<SocialMarketing />}/>
+          <Route path="/services/branding" element={<Branding />} />
+
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
