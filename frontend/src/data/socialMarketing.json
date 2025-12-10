@@ -1,0 +1,78 @@
+{
+  "packages": [
+    {
+      "id": 1,
+      "category": "Starter",
+      "title": "Social Media Starter Pack",
+      "shortDesc": "Best for small businesses wanting basic visibility on social media.",
+      "fullDesc": "This plan includes essential social media setup, basic content posting, brand styling, and simple engagement growth strategies. Perfect for new businesses entering social platforms.",
+      "price": 15000,
+      "discount": 10,
+      "features": [
+        "Setup of FB/IG pages",
+        "8 posts per month",
+        "Basic content design",
+        "Hashtag optimization",
+        "Monthly growth insights"
+      ]
+    },
+    {
+      "id": 2,
+      "category": "Professional",
+      "title": "Growth & Engagement Package",
+      "shortDesc": "Grow your brand with targeted content and engagement strategies.",
+      "fullDesc": "A full-service social marketing strategy including regular content, ads setup, branding consistency, analytics, audience segmentation, and engagement boosts.",
+      "price": 30000,
+      "discount": 15,
+      "features": [
+        "16 posts per month",
+        "Reels + story design",
+        "Ad campaign setup",
+        "Audience segmentation",
+        "Brand styling & templates",
+        "Monthly performance report"
+      ]
+    },
+    {
+      "id": 3,
+      "category": "Enterprise",
+      "title": "Advanced Social Automation",
+      "shortDesc": "Complete social media management + automation + influencer strategy.",
+      "fullDesc": "Ideal for advanced brands wanting large-scale social presence, automated posting, lead generation, influencer partnerships, and weekly analytics with advanced reporting.",
+      "price": 60000,
+      "discount": 20,
+      "features": [
+        "Daily posting + engagement",
+        "Influencer outreach plan",
+        "Automated posting system",
+        "Campaign funnels & retargeting",
+        "Advanced analytics dashboard",
+        "Weekly strategy reviews"
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "id": 1,
+      "name": "Restaurant Instagram Growth",
+      "shortDesc": "Achieved 12k followers in 4 months using reels + story strategy.",
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80",
+      "url": "https://example-social1.com"
+    },
+    {
+      "id": 2,
+      "name": "Fashion Store Branding Boost",
+      "shortDesc": "Increased engagement by 260% with branding consistency.",
+      "image": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80",
+      "url": ""
+    },
+    {
+      "id": 3,
+      "name": "Influencer Campaign Execution",
+      "shortDesc": "Managed influencer marketing resulting in 3× sales growth.",
+      "image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
+      "url": "https://example-social3.com"
+    }
+  ]
+}

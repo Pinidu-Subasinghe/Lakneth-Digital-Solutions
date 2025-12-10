@@ -1,0 +1,71 @@
+{
+  "packages": [
+    {
+      "id": 1,
+      "category": "Starter",
+      "title": "Basic SMS Blast Package",
+      "shortDesc": "Send targeted SMS campaigns to improve engagement and reach.",
+      "fullDesc": "This package includes a basic SMS broadcast for promotions, reminders, and announcements. Ideal for small businesses who want fast customer reach at low cost.",
+      "price": 15000,
+      "discount": 5,
+      "features": [
+        "Up to 2,000 SMS sends",
+        "Campaign setup & scheduling",
+        "Sender ID setup",
+        "Basic reporting (delivery status)",
+        "1 content template design"
+      ]
+    },
+    {
+      "id": 2,
+      "category": "Professional",
+      "title": "SMS + Email Engagement Package",
+      "shortDesc": "Boost conversions using combined SMS and email automation.",
+      "fullDesc": "A hybrid communication package that uses both SMS and email workflows to maximize engagement. Ideal for growing brands with repeating customers.",
+      "price": 35000,
+      "discount": 12,
+      "features": [
+        "Up to 5,000 SMS sends",
+        "Up to 2,000 email sends",
+        "Automated workflow triggers",
+        "Professional email template design",
+        "Performance analytics dashboard"
+      ]
+    },
+    {
+      "id": 3,
+      "category": "Enterprise",
+      "title": "Advanced Marketing Automation Suite",
+      "shortDesc": "Complete automation system for SMS, email, and remarketing flows.",
+      "fullDesc": "A fully automated solution for large-scale businesses. Includes multi-step flows, drip campaigns, A/B testing, segmentation, and deep analytics.",
+      "price": 80000,
+      "discount": 18,
+      "features": [
+        "Unlimited SMS flows",
+        "Up to 10,000 email sends",
+        "A/B testing system",
+        "Customer segmentation",
+        "Detailed analytics & insights",
+        "Dedicated support specialist"
+      ]
+    }
+  ],
+
+  
+  "projects": [
+    {
+      "id": 1,
+      "name": "E-commerce Promo Campaign",
+      "shortDesc": "SMS promo campaign that boosted customer return rate by 42%.",
+      "image": "https://images.unsplash.com/photo-1556157382-97eda2d62296",
+      "url": ""
+    },
+    {
+      "id": 2,
+      "name": "Restaurant Landing Page",
+      "shortDesc": "A stylish landing page for a restaurant with menu showcase.",
+      "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+      "url": ""
+    }
+  ]
+}

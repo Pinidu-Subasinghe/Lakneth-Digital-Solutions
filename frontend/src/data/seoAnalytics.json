@@ -1,0 +1,79 @@
+{
+  "packages": [
+    {
+      "id": 1,
+      "category": "Starter",
+      "title": "Basic SEO Optimization",
+      "shortDesc": "Perfect for new websites needing essential SEO improvements.",
+      "fullDesc": "This package includes foundational SEO setup including keyword placement, metadata optimization, image compression, mobile performance enhancement, and Google Search Console setup. Ideal for beginners wanting search visibility.",
+      "price": 20000,
+      "discount": 10,
+      "features": [
+        "Keyword research (5 keywords)",
+        "Page title & meta description setup",
+        "Image optimization",
+        "Mobile performance improvements",
+        "Google Search Console setup",
+        "Basic on-page SEO fixes"
+      ]
+    },
+    {
+      "id": 2,
+      "category": "Professional",
+      "title": "SEO Growth Package",
+      "shortDesc": "Boost rankings with advanced SEO techniques and tracking.",
+      "fullDesc": "A complete SEO package with deeper keyword research, speed optimization, competitor analysis, monthly performance tracking, and structured data. Made for growing brands that want search dominance.",
+      "price": 40000,
+      "discount": 15,
+      "features": [
+        "Keyword research (15 keywords)",
+        "Competitor & market analysis",
+        "Website speed optimization",
+        "Schema markup (structured data)",
+        "SEO analytics dashboard",
+        "Monthly SEO performance reports"
+      ]
+    },
+    {
+      "id": 3,
+      "category": "Enterprise",
+      "title": "Elite SEO + Analytics System",
+      "shortDesc": "Full SEO automation, analytics integration, and keyword tracking.",
+      "fullDesc": "Our enterprise solution includes in-depth SEO planning, content strategy, real-time analytics dashboards, backlink audits, and proactive improvements every week. Ideal for serious brands.",
+      "price": 80000,
+      "discount": 20,
+      "features": [
+        "Full website SEO audit",
+        "High-intent keyword strategy (30+ keywords)",
+        "Custom analytics dashboard (GA4 + heatmaps)",
+        "Backlink audit & cleanup",
+        "Weekly keyword performance updates",
+        "Full SEO automation + monitoring"
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "id": 1,
+      "name": "Tech Startup SEO Boost",
+      "shortDesc": "We increased organic traffic by 300% in 6 months.",
+      "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216",
+      "url": "https://example-seo1.com"
+    },
+    {
+      "id": 2,
+      "name": "Local Business Ranking Upgrade",
+      "shortDesc": "A small business jumped to Google page 1 within 10 weeks.",
+      "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+      "url": ""
+    },
+    {
+      "id": 3,
+      "name": "E-Commerce Analytics Setup",
+      "shortDesc": "Complete GA4 setup + funnel optimization for conversions.",
+      "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
+      "url": "https://example-seo3.com"
+    }
+  ]
+}

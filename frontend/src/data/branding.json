@@ -1,0 +1,77 @@
+{
+  "packages": [
+    {
+      "id": 1,
+      "category": "Starter",
+      "title": "Basic Logo Package",
+      "shortDesc": "Perfect for small businesses needing a clean and simple logo.",
+      "fullDesc": "This package includes 2 initial logo concepts, 2 revisions, color palette selection, and delivery in multiple formats. Ideal for startups and small brands.",
+      "price": 12000,
+      "discount": 5,
+      "features": [
+        "2 logo concepts",
+        "2 revisions",
+        "Color palette selection",
+        "Font pairing",
+        "PNG + JPG delivery"
+      ]
+    },
+    {
+      "id": 2,
+      "category": "Professional",
+      "title": "Brand Identity Package",
+      "shortDesc": "A complete branding system with modern, professional designs.",
+      "fullDesc": "Includes 4 logo concepts, multiple revisions, brand guidelines, social media kit, and business card design. Perfect for brands wanting recognition and consistency.",
+      "price": 30000,
+      "discount": 15,
+      "features": [
+        "4 logo concepts",
+        "Unlimited revisions",
+        "Brand guidelines PDF",
+        "Business card design",
+        "Social media branding kit"
+      ]
+    },
+    {
+      "id": 3,
+      "category": "Enterprise",
+      "title": "Premium Branding Suite",
+      "shortDesc": "Full brand transformation with advanced design elements.",
+      "fullDesc": "Complete branding identity including illustrations, custom icon pack, full stationery design, packaging concepts, and visual brand storytelling.",
+      "price": 60000,
+      "discount": 20,
+      "features": [
+        "Premium logo + submarks",
+        "Custom icon set",
+        "Stationery design",
+        "Packaging design",
+        "Brand story presentation",
+        "Full branding folder delivery"
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "id": 1,
+      "name": "Startup Branding Suite",
+      "shortDesc": "A fresh and modern identity designed for a tech startup.",
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80",
+      "url": "https://example-brand1.com"
+    },
+    {
+      "id": 2,
+      "name": "Cafe Logo & Packaging",
+      "shortDesc": "Complete branding for a cafe including logo + packaging.",
+      "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80",
+      "url": ""
+    },
+    {
+      "id": 3,
+      "name": "Corporate Brand Redesign",
+      "shortDesc": "Full rebrand including guidelines and marketing materials.",
+      "image": "https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=800&q=80",
+      "url": "https://example-brand3.com"
+    }
+  ]
+}

@@ -40,7 +40,7 @@ export default function WebDesign() {
 
   return (
     <section className="min-h-screen px-6 py-12 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* PAGE TITLE */}
         <h1 className="text-4xl font-bold mb-4">Web Design & Development</h1>
         <p className="text-gray-600 dark:text-gray-300 text-lg mb-10">
@@ -75,10 +75,10 @@ export default function WebDesign() {
                 </div>
 
                 {/* TITLE - FIXED HEIGHT */}
-                <h3 className="text-xl font-semibold mt-2 h-14">{pkg.title}</h3>
+                <h3 className="text-xl font-semibold mt-3 h-10">{pkg.title}</h3>
 
                 {/* DESCRIPTION - FIXED HEIGHT */}
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 h-16">
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 h-12">
                   {pkg.shortDesc}
                 </p>
 
@@ -128,7 +128,15 @@ export default function WebDesign() {
                 src={project.image}
                 alt={project.name}
                 className="w-full h-40 object-cover"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src =
+                    "https://via.placeholder.com/600x400?text=Image+Not+Available";
+                }}
               />
+
               <div className="p-5">
                 <h3 className="text-lg font-semibold">{project.name}</h3>
                 <p class0Name="text-sm text-gray-500 dark:text-gray-400 mt-2">
