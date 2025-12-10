@@ -83,7 +83,7 @@ export default function Contact() {
                 placeholder="Write your message..."
                 value={msg}
                 onChange={(e) => setMsg(e.target.value)}
-                className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-blue-500 outline-none"
+                className="resize-none w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-blue-500 outline-none"
                 required
               ></textarea>
             </div>

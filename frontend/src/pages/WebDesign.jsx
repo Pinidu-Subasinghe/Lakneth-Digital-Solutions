@@ -217,7 +217,7 @@ export default function WebDesign() {
               className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg font-medium"
               onClick={() => sendWhatsApp(selectedPackage)}
             >
-              More Details on WhatsApp
+              More Details
             </button>
           </div>
         </div>

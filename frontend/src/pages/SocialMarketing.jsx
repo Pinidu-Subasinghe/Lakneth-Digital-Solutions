@@ -200,7 +200,7 @@ export default function SocialMarketing() {
               className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg"
               onClick={() => sendWhatsApp(selectedPackage)}
             >
-              More Details on WhatsApp
+              More Details
             </button>
           </div>
         </div>

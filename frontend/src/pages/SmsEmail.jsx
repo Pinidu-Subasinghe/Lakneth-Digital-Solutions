@@ -205,7 +205,7 @@ export default function SmsEmail() {
               className="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-lg font-medium"
               onClick={() => sendWhatsApp(selectedPackage)}
             >
-              More Details on WhatsApp
+              More Details
             </button>
           </div>
         </div>

@@ -326,7 +326,7 @@ export default function FacebookSelling() {
             return (
               <div
                 key={page.id}
-                className="relative bg-white dark:bg-gray-800 rounded-xl shadow-md p-5 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] overflow-hidden"
+                className="relative bg-white dark:bg-gray-800 rounded-xl shadow-md p-5 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] overflow-hidden flex flex-col"
               >
                 {/* STATUS RIBBON */}
                 {page.status === "available" && (
@@ -406,9 +406,9 @@ export default function FacebookSelling() {
 
                 <button
                   onClick={() => openWhatsApp(page)}
-                  className="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg shadow transition"
+                  className="mt-auto w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg shadow transition"
                 >
-                  Contact on WhatsApp
+                  Mode Details
                 </button>
               </div>
             );

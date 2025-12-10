@@ -203,7 +203,7 @@ export default function SeoAnalytics() {
               className="w-full bg-orange-600 hover:bg-orange-700 text-white py-2 rounded-lg font-medium"
               onClick={() => sendWhatsApp(selectedPackage)}
             >
-              More Details on WhatsApp
+              More Details
             </button>
           </div>
         </div>
