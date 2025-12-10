@@ -31,13 +31,6 @@ const getHDFacebookImage = (url) => {
   return `https://graph.facebook.com/${username}/picture?type=large&width=720&height=720`;
 };
 
-const qualityText = {
-  green: "No Issues 🟢",
-  yellow: "Has Warnings 🟡",
-  red: "Restricted 🔴",
-  black: "Unpublished / Severe Issues ⚫",
-};
-
 /* WHATSAPP MESSAGE */
 const openWhatsApp = (page) => {
   const phone = "94756343816";
@@ -47,34 +40,43 @@ const openWhatsApp = (page) => {
       ? page.price - (page.price * page.discount) / 100
       : page.price;
 
-  // CUSTOM PRICE TEXT
   const priceMessage =
     page.discount > 0
-      ? `Original Price: Rs.${page.price.toLocaleString()}\n` +
-        `Discount: ${page.discount}%\n` +
-        `Discounted Price: Rs.${discountedPrice.toLocaleString()}\n`
+      ? `Original Price: Rs.${page.price.toLocaleString()}\nDiscount: ${
+          page.discount
+        }%\nDiscounted Price: Rs.${discountedPrice.toLocaleString()}\n`
       : `Price: Rs.${page.price.toLocaleString()}\n`;
 
-  // ⭐ ADD PAGE QUALITY LINE
-  const qualityMessage = `Page Quality: ${
-    qualityText[page.qualityStatus] || "Unknown"
-  }\n`;
+  const qualityInfo = {
+    green: "No Issues 🟢",
+    yellow: "Has Warnings 🟡",
+    red: "Restricted 🔴",
+    black: "Unpublished / Severe Issues ⚫",
+  };
+
+  const verifiedStatus = page.verified ? "Verified Page ✅" : "Not Verified ❌";
 
   const msg =
     `Hello, I'm interested in this Facebook Page:\n\n` +
-    `Name: ${page.name}\n` +
-    `Likes: ${page.likes.toLocaleString()}\n` +
-    qualityMessage + // ⭐ Injected here
-    priceMessage +
-    `Page URL: ${page.url}\n\n` +
+    `📌 *Name:* ${page.name}\n` +
+    `👍 *Likes:* ${page.likes.toLocaleString()}\n` +
+    `🏷️ *Category:* ${page.categories.join(", ")}\n\n` +
+    `🔵 *Verified Status:* ${verifiedStatus}\n` +
+    `⚙️ *Page Quality:* ${qualityInfo[page.qualityStatus]}\n\n` +
+    `💰 *Pricing Details:*\n${priceMessage}` +
+    `🔗 *Page URL:* ${page.url}\n\n` +
     `Please send more details.`;
 
-  window.open(
-    `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(
-      msg
-    )}`,
-    "_blank"
-  );
+  const encoded = encodeURIComponent(msg);
+
+  // Device detection → choose link
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  const mobileLink = `whatsapp://send?phone=${phone}&text=${encoded}`;
+  const webLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encoded}`;
+
+  // Open based on device
+  window.open(isMobile ? mobileLink : webLink, "_blank");
 };
 
 /* FILTER PANEL */

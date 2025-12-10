@@ -13,28 +13,32 @@ export default function SeoAnalytics() {
 
   const sendWhatsApp = (pkg) => {
     const phone = "94756343816";
+
     const discountedPrice =
       pkg.discount > 0
         ? pkg.price - (pkg.price * pkg.discount) / 100
         : pkg.price;
 
     const msg =
-      `Hello! I'm interested in the *${pkg.category} SEO Package*.\n\n` +
-      `Package: ${pkg.title}\n` +
-      `Price: Rs. ${pkg.price.toLocaleString()}\n` +
+      `👋 Hello! I'm interested in the *${pkg.category} SEO Package*.\n\n` +
+      `📦 *Package:* ${pkg.title}\n` +
+      `💰 *Price:* Rs. ${pkg.price.toLocaleString()}\n` +
       (pkg.discount > 0
-        ? `Discount: ${
-            pkg.discount
-          }%\nDiscounted Price: Rs. ${discountedPrice.toLocaleString()}\n`
-        : "") +
-      `\nPlease send me more details.`;
+        ? `🎉 *Discount:* ${pkg.discount}%\n` +
+          `💵 *Discounted Price:* Rs. ${discountedPrice.toLocaleString()}\n`
+        : ``) +
+      `\n📊 Please send me more details about this SEO package.`;
 
-    window.open(
-      `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(
-        msg
-      )}`,
-      "_blank"
-    );
+    const encoded = encodeURIComponent(msg);
+
+    // Detect mobile device
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    // Mobile → WhatsApp App | Desktop → WhatsApp Web
+    const mobileLink = `whatsapp://send?phone=${phone}&text=${encoded}`;
+    const webLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encoded}`;
+
+    window.open(isMobile ? mobileLink : webLink, "_blank");
   };
 
   return (
@@ -61,8 +65,15 @@ export default function SeoAnalytics() {
             return (
               <div
                 key={pkg.id}
-                className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700 flex flex-col"
+                className="relative bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700 flex flex-col"
               >
+                {/* ⭐ DISCOUNT BADGE */}
+                {pkg.discount > 0 && (
+                  <div className="absolute top-3 right-3 bg-pink-600 text-white text-xs font-bold px-2 py-1 rounded-lg shadow z-20">
+                    -{pkg.discount}%
+                  </div>
+                )}
+
                 {/* CATEGORY LABEL */}
                 <div
                   className={`w-fit px-3 py-1 rounded-full text-xs font-semibold border ${

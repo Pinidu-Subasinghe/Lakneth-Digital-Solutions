@@ -8,28 +8,32 @@ export default function WebDesign() {
   // WhatsApp Message Builder
   const sendWhatsApp = (pkg) => {
     const phone = "94756343816";
+
     const discountedPrice =
       pkg.discount > 0
         ? pkg.price - (pkg.price * pkg.discount) / 100
         : pkg.price;
 
     const msg =
-      `Hello! I’m interested in the Web Development *${pkg.category} Package*.\n\n` +
-      `Package: ${pkg.title}\n` +
-      `Price: Rs. ${pkg.price.toLocaleString()}\n` +
+      `👋 Hello! I'm interested in your Web Development *${pkg.category} Package*.\n\n` +
+      `📦 *Package Name:* ${pkg.title}\n` +
+      `💰 *Price:* Rs. ${pkg.price.toLocaleString()}\n` +
       (pkg.discount > 0
-        ? `Discount: ${
+        ? `🎉 *Discount:* ${
             pkg.discount
-          }%\nDiscounted Price: Rs. ${discountedPrice.toLocaleString()}\n`
+          }%\n💵 *Discounted Price:* Rs. ${discountedPrice.toLocaleString()}\n`
         : "") +
-      `\nPlease send me more details.`;
+      `\n📩 Please send me more details.`;
 
-    window.open(
-      `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(
-        msg
-      )}`,
-      "_blank"
-    );
+    const encoded = encodeURIComponent(msg);
+
+    // Mobile / Desktop auto detection
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    const mobileLink = `whatsapp://send?phone=${phone}&text=${encoded}`;
+    const webLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encoded}`;
+
+    window.open(isMobile ? mobileLink : webLink, "_blank");
   };
 
   const categoryColors = {
@@ -63,8 +67,16 @@ export default function WebDesign() {
             return (
               <div
                 key={pkg.id}
-                className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700 flex flex-col"
+                className="relative bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 hover:shadow-xl 
+  transition-all border border-gray-200 dark:border-gray-700 flex flex-col"
               >
+                {/* DISCOUNT BADGE */}
+                {pkg.discount > 0 && (
+                  <div className="absolute top-3 right-3 bg-pink-600 text-white text-xs font-bold px-2 py-1 rounded-lg shadow z-20">
+                    -{pkg.discount}%
+                  </div>
+                )}
+
                 {/* CATEGORY LABEL */}
                 <div
                   className={`w-fit px-3 py-1 rounded-full text-xs font-semibold border ${
@@ -82,7 +94,7 @@ export default function WebDesign() {
                   {pkg.shortDesc}
                 </p>
 
-                {/* PRICE (fixed height for perfect alignment) */}
+                {/* PRICE SECTION */}
                 <div className="mt-0 mb-3 h-14 flex flex-col justify-center">
                   {pkg.discount > 0 ? (
                     <>
