@@ -1,0 +1,78 @@
+{
+  "packages": [
+    {
+      "id": 1,
+      "category": "Bronze",
+      "title": "Starter Website Package",
+      "shortDesc": "A basic, clean and modern website perfect for small businesses.",
+      "fullDesc": "This package includes a mobile-friendly website with up to 3 pages, essential features, a contact form, and basic on-page SEO. Recommended for small businesses, startups, or professionals who need a simple and elegant web presence.",
+      "price": 25000,
+      "discount": 10,
+      "features": [
+        "3-page responsive website",
+        "Basic UI/UX design",
+        "Contact form integration",
+        "Mobile-first layout",
+        "Basic SEO optimization"
+      ]
+    },
+    {
+      "id": 2,
+      "category": "Silver",
+      "title": "Professional Business Package",
+      "shortDesc": "Ideal for growing businesses that need more features and branding.",
+      "fullDesc": "A professionally designed website with up to 6 pages, improved branding, animations, social media integration, and better SEO. Perfect for companies that want to build trust and improve their online identity.",
+      "price": 45000,
+      "discount": 15,
+      "features": [
+        "6-page responsive website",
+        "Custom UI/UX design",
+        "Animations & smooth transitions",
+        "Social media links & integrations",
+        "Standard SEO optimization",
+        "Google Maps & WhatsApp chat button"
+      ]
+    },
+    {
+      "id": 3,
+      "category": "Gold",
+      "title": "Premium Business Package",
+      "shortDesc": "A feature-rich, high-performing website for established brands.",
+      "fullDesc": "A premium package with up to 10 pages, advanced design, branding consistency, analytics, security optimization, and professional SEO. Recommended for companies that want to grow fast with a powerful online presence.",
+      "price": 75000,
+      "discount": 20,
+      "features": [
+        "10-page premium responsive website",
+        "Advanced UI/UX + motion design",
+        "Branding & graphic enhancements",
+        "SEO keyword planning & optimization",
+        "Google Analytics + performance reports",
+        "Security & speed optimization"
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "id": 1,
+      "name": "Luxury Travel Website",
+      "shortDesc": "A modern travel agency platform with booking UI and animations.",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+      "url": ""
+    },
+    {
+      "id": 2,
+      "name": "Modern Portfolio Website",
+      "shortDesc": "A clean and stylish personal portfolio design showcasing skills and projects.",
+      "image": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f",
+      "url": ""
+    },
+    {
+      "id": 3,
+      "name": "E-Commerce Fashion Store",
+      "shortDesc": "A simple e-commerce UI with product gallery and modern layout.",
+      "image": "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb",
+      "url": ""
+    }
+  ]
+}
