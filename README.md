@@ -52,4 +52,4 @@ A robust system for generating professional, formatted inquiry messages with emo
 | **Icons** | Lucide React Icons |
 | **Logic** | JavaScript ES6 |
 | **Data Source** | JSON Datasets |
-| **Utilities** | WhatsApp Message API, Facebook Graph API |
+| **Utilities** | WhatsApp Message API, Facebook Graph APII |
