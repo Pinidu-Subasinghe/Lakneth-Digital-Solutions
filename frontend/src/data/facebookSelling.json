@@ -7,6 +7,7 @@
     "price": 45000,
     "discount": 5,
     "status": "available",
+    "qualityStatus": "green",
     "url": "https://www.facebook.com/magadige",
     "image": "/pages/techdeals.jpg"
   },
@@ -18,6 +19,7 @@
     "price": 32000,
     "discount": 0,
     "status": "available",
+    "qualityStatus": "yellow",
     "url": "https://facebook.com/smartphonelk",
     "image": "/pages/phone.jpg"
   },
@@ -29,6 +31,8 @@
     "price": 38000,
     "discount": 0,
     "status": "available",
+    "qualityStatus": "green",
+    "verified": true,
     "url": "https://facebook.com/hutchsrilanka",
     "image": "/pages/hutch.jpg"
   },
@@ -40,6 +44,7 @@
     "price": 45000,
     "discount": 15,
     "status": "available",
+    "qualityStatus": "yellow",
     "url": "https://www.facebook.com/page.SIGAr",
     "image": "/pages/techdeals.jpg"
   },
@@ -51,6 +56,8 @@
     "price": 45000,
     "discount": 10,
     "status": "available",
+    "qualityStatus": "red",
+    "verified": true,
     "url": "https://www.facebook.com/Bybit",
     "image": "/pages/techdeals.jpg"
   },
@@ -62,6 +69,8 @@
     "price": 45000,
     "discount": 0,
     "status": "available",
+    "qualityStatus": "green",
+    "verified": true,
     "url": "https://www.facebook.com/adamw",
     "image": "/pages/techdeals.jpg"
   }

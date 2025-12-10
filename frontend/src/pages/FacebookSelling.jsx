@@ -1,5 +1,6 @@
 import { useState } from "react";
 import fbData from "../data/facebookSelling.json";
+import VerifiedBadge from "../assets/verified.png";
 import {
   Filter,
   X,
@@ -30,6 +31,13 @@ const getHDFacebookImage = (url) => {
   return `https://graph.facebook.com/${username}/picture?type=large&width=720&height=720`;
 };
 
+const qualityText = {
+  green: "No Issues 🟢",
+  yellow: "Has Warnings 🟡",
+  red: "Restricted 🔴",
+  black: "Unpublished / Severe Issues ⚫",
+};
+
 /* WHATSAPP MESSAGE */
 const openWhatsApp = (page) => {
   const phone = "94756343816";
@@ -39,7 +47,7 @@ const openWhatsApp = (page) => {
       ? page.price - (page.price * page.discount) / 100
       : page.price;
 
-  // CUSTOM MESSAGE BASED ON DISCOUNT
+  // CUSTOM PRICE TEXT
   const priceMessage =
     page.discount > 0
       ? `Original Price: Rs.${page.price.toLocaleString()}\n` +
@@ -47,11 +55,17 @@ const openWhatsApp = (page) => {
         `Discounted Price: Rs.${discountedPrice.toLocaleString()}\n`
       : `Price: Rs.${page.price.toLocaleString()}\n`;
 
+  // ⭐ ADD PAGE QUALITY LINE
+  const qualityMessage = `Page Quality: ${
+    qualityText[page.qualityStatus] || "Unknown"
+  }\n`;
+
   const msg =
     `Hello, I'm interested in this Facebook Page:\n\n` +
     `Name: ${page.name}\n` +
     `Likes: ${page.likes.toLocaleString()}\n` +
-    priceMessage + // inject the dynamic price text here
+    qualityMessage + // ⭐ Injected here
+    priceMessage +
     `Page URL: ${page.url}\n\n` +
     `Please send more details.`;
 
@@ -291,72 +305,112 @@ export default function FacebookSelling() {
       {/* PAGE CONTENT CARDS */}
       <div className="px-6 pb-20">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {filteredPages.map((page) => (
-            <div
-              key={page.id}
-              className="relative bg-white dark:bg-gray-800 rounded-xl shadow-md p-5 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] overflow-hidden  /* prevents content from escaping */"
-            >
-              {/* STATUS RIBBON */}
-              {page.status === "available" && (
-                <div className="absolute top-3 left-0 bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-r-lg shadow-lg z-20">
-                  Available
+          {filteredPages.map((page) => {
+            // Quality status mappings
+            const qualityColors = {
+              green: "bg-green-100 text-green-700 border-green-300",
+              yellow: "bg-yellow-100 text-yellow-700 border-yellow-300",
+              red: "bg-red-100 text-red-700 border-red-300",
+              black: "bg-gray-800 text-white border-gray-700",
+            };
+
+            const qualityText = {
+              green: "No Issues",
+              yellow: "Has Warnings",
+              red: "Restricted",
+              black: "Unpublished / Severe Issues",
+            };
+
+            return (
+              <div
+                key={page.id}
+                className="relative bg-white dark:bg-gray-800 rounded-xl shadow-md p-5 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] overflow-hidden"
+              >
+                {/* STATUS RIBBON */}
+                {page.status === "available" && (
+                  <div className="absolute top-3 left-0 bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-r-lg shadow-lg z-20">
+                    Available
+                  </div>
+                )}
+
+                {/* DISCOUNT BADGE */}
+                {page.discount > 0 && (
+                  <div className="absolute top-3 right-3 bg-pink-600 text-white text-xs font-bold px-2 py-1 rounded-lg shadow z-20">
+                    -{page.discount}%
+                  </div>
+                )}
+
+                {/* IMAGE */}
+                <img
+                  src={getHDFacebookImage(page.url)}
+                  onError={(e) => (e.target.src = "/placeholder_fb.png")}
+                  alt={page.name + " Facebook Page Image"}
+                  className="w-full h-44 object-cover rounded-lg transition-all duration-300 hover:opacity-90 z-10 relative"
+                />
+
+                {/* NAME + QUALITY STATUS + VERIFIED BADGE */}
+                <div className="mt-4 flex items-center justify-between">
+                  <div className="flex items-center gap-1">
+                    <h2 className="text-lg font-semibold">{page.name}</h2>
+
+                    {/* VERIFIED BADGE */}
+                    {page.verified && (
+                      <img
+                        src={VerifiedBadge}
+                        alt="Verified Badge"
+                        className="w-4 h-4 object-contain"
+                      />
+                    )}
+                  </div>
+
+                  <span
+                    className={`px-2.5 py-1 text-[11px] font-semibold rounded-full border ${
+                      qualityColors[page.qualityStatus]
+                    }`}
+                  >
+                    {qualityText[page.qualityStatus]}
+                  </span>
                 </div>
-              )}
 
-              {/* DISCOUNT BADGE */}
-              {page.discount > 0 && (
-                <div className="absolute top-3 right-3 bg-pink-600 text-white text-xs font-bold px-2 py-1 rounded-lg shadow z-20">
-                  -{page.discount}%
-                </div>
-              )}
+                <p className="text-gray-600 dark:text-gray-300 mt-1 text-sm">
+                  <strong>Category:</strong> {page.categories.join(", ")}
+                </p>
 
-              <img
-                src={getHDFacebookImage(page.url)}
-                onError={(e) => (e.target.src = "/placeholder_fb.png")}
-                alt={page.name + " Facebook Page Image"}
-                className="w-full h-44 object-cover rounded-lg transition-all duration-300 hover:opacity-90 z-10 relative"
-              />
+                <p className="text-gray-600 dark:text-gray-300 text-sm">
+                  <strong>Likes:</strong> {page.likes.toLocaleString()}
+                </p>
 
-              <h2 className="text-xl font-semibold mt-4">{page.name}</h2>
-
-              <p className="text-gray-600 dark:text-gray-300 mt-2 text-sm">
-                <strong>Category:</strong> {page.categories.join(", ")}
-              </p>
-
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
-                <strong>Likes:</strong> {page.likes.toLocaleString()}
-              </p>
-
-              {/* PRICE SECTION */}
-              <div className="mt-2 text-sm">
-                {page.discount > 0 ? (
-                  <div className="flex items-center gap-2">
-                    <span className="line-through text-gray-500">
+                {/* PRICE */}
+                <div className="mt-2 text-sm">
+                  {page.discount > 0 ? (
+                    <div className="flex items-center gap-2">
+                      <span className="line-through text-gray-500">
+                        Rs. {page.price.toLocaleString()}
+                      </span>
+                      <span className="font-bold text-green-600 text-lg">
+                        Rs{" "}
+                        {(
+                          page.price -
+                          (page.price * page.discount) / 100
+                        ).toLocaleString()}
+                      </span>
+                    </div>
+                  ) : (
+                    <span className="font-bold text-gray-900 dark:text-gray-200 text-lg">
                       Rs. {page.price.toLocaleString()}
                     </span>
-                    <span className="font-bold text-green-600 text-lg">
-                      Rs.{" "}
-                      {(
-                        page.price -
-                        (page.price * page.discount) / 100
-                      ).toLocaleString()}
-                    </span>
-                  </div>
-                ) : (
-                  <span className="font-bold text-gray-900 dark:text-gray-200 text-lg">
-                    Rs. {page.price.toLocaleString()}
-                  </span>
-                )}
-              </div>
+                  )}
+                </div>
 
-              <button
-                onClick={() => openWhatsApp(page)}
-                className="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg shadow transition"
-              >
-                Contact on WhatsApp
-              </button>
-            </div>
-          ))}
+                <button
+                  onClick={() => openWhatsApp(page)}
+                  className="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg shadow transition"
+                >
+                  Contact on WhatsApp
+                </button>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
