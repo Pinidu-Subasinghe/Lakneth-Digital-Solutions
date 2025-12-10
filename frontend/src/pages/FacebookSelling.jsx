@@ -33,11 +33,25 @@ const getHDFacebookImage = (url) => {
 /* WHATSAPP MESSAGE */
 const openWhatsApp = (page) => {
   const phone = "94756343816";
+
+  const discountedPrice =
+    page.discount > 0
+      ? page.price - (page.price * page.discount) / 100
+      : page.price;
+
+  // CUSTOM MESSAGE BASED ON DISCOUNT
+  const priceMessage =
+    page.discount > 0
+      ? `Original Price: Rs.${page.price.toLocaleString()}\n` +
+        `Discount: ${page.discount}%\n` +
+        `Discounted Price: Rs.${discountedPrice.toLocaleString()}\n`
+      : `Price: Rs.${page.price.toLocaleString()}\n`;
+
   const msg =
     `Hello, I'm interested in this Facebook Page:\n\n` +
     `Name: ${page.name}\n` +
     `Likes: ${page.likes.toLocaleString()}\n` +
-    `Price: Rs.${page.price.toLocaleString()}\n` +
+    priceMessage + // inject the dynamic price text here
     `Page URL: ${page.url}\n\n` +
     `Please send more details.`;
 
@@ -276,55 +290,22 @@ export default function FacebookSelling() {
 
       {/* PAGE CONTENT CARDS */}
       <div className="px-6 pb-20">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {filteredPages.map((page) => (
             <div
               key={page.id}
-              className="
-    relative
-    bg-white dark:bg-gray-800 rounded-xl shadow-md p-5
-    transition-all duration-300
-    hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02]
-    overflow-hidden  /* prevents content from escaping */
-  "
+              className="relative bg-white dark:bg-gray-800 rounded-xl shadow-md p-5 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] overflow-hidden  /* prevents content from escaping */"
             >
               {/* STATUS RIBBON */}
               {page.status === "available" && (
-                <div
-                  className="
-  absolute top-3 left-0 
-  bg-green-600 text-white text-xs font-semibold
-  px-3 py-1 rounded-r-lg shadow-lg
-  z-20
-"
-                >
+                <div className="absolute top-3 left-0 bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-r-lg shadow-lg z-20">
                   Available
-                </div>
-              )}
-
-              {page.status === "sold" && (
-                <div
-                  className="
-  absolute top-3 left-0 
-  bg-red-600 text-white text-xs font-semibold
-  px-3 py-1 rounded-r-lg shadow-lg
-  z-20
-"
-                >
-                  Sold Out
                 </div>
               )}
 
               {/* DISCOUNT BADGE */}
               {page.discount > 0 && (
-                <div
-                  className="
-  absolute top-3 right-3 
-  bg-pink-600 text-white text-xs font-bold
-  px-2 py-1 rounded-lg shadow
-  z-20
-"
-                >
+                <div className="absolute top-3 right-3 bg-pink-600 text-white text-xs font-bold px-2 py-1 rounded-lg shadow z-20">
                   -{page.discount}%
                 </div>
               )}
@@ -333,11 +314,7 @@ export default function FacebookSelling() {
                 src={getHDFacebookImage(page.url)}
                 onError={(e) => (e.target.src = "/placeholder_fb.png")}
                 alt={page.name + " Facebook Page Image"}
-                className="
-    w-full h-44 object-cover rounded-lg
-    transition-all duration-300 hover:opacity-90
-    z-10 relative
-  "
+                className="w-full h-44 object-cover rounded-lg transition-all duration-300 hover:opacity-90 z-10 relative"
               />
 
               <h2 className="text-xl font-semibold mt-4">{page.name}</h2>
