@@ -5,6 +5,8 @@
     "categories": ["Travel"],
     "likes": 10500,
     "price": 45000,
+    "discount": 5,
+    "status": "available",
     "url": "https://www.facebook.com/magadige",
     "image": "/pages/techdeals.jpg"
   },
@@ -14,6 +16,8 @@
     "categories": ["Phone"],
     "likes": 7200,
     "price": 32000,
+    "discount": 5,
+    "status": "sold",
     "url": "https://facebook.com/smartphonelk",
     "image": "/pages/phone.jpg"
   },
@@ -23,6 +27,8 @@
     "categories": ["Communication"],
     "likes": 9800,
     "price": 38000,
+    "discount": 5,
+    "status": "sold",
     "url": "https://facebook.com/hutchsrilanka",
     "image": "/pages/hutch.jpg"
   },
@@ -32,6 +38,8 @@
     "categories": ["Nikan"],
     "likes": 10500,
     "price": 45000,
+    "discount": 15,
+    "status": "available",
     "url": "https://www.facebook.com/page.SIGAr",
     "image": "/pages/techdeals.jpg"
   },
@@ -41,6 +49,8 @@
     "categories": ["Crypto"],
     "likes": 10500,
     "price": 45000,
+    "discount": 10,
+    "status": "available",
     "url": "https://www.facebook.com/Bybit",
     "image": "/pages/techdeals.jpg"
   },
@@ -50,6 +60,8 @@
     "categories": ["Comedy"],
     "likes": 10500,
     "price": 45000,
+    "discount": 5,
+    "status": "sold",
     "url": "https://www.facebook.com/adamw",
     "image": "/pages/techdeals.jpg"
   }

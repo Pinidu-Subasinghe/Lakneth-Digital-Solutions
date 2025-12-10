@@ -63,28 +63,40 @@ body {
   animation: slideIn 0.35s ease forwards;
 }
 
-/* Slide-out animation */
-@keyframes slideOut {
-  0% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
+@keyframes slide-in {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slide-out {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.25s ease-out forwards;
 }
 
 .animate-slide-out {
-  animation: slideOut 0.3s ease forwards;
+  animation: slide-out 0.25s ease-in forwards;
 }
-/* Disable all hover effects on mobile */
-@media (max-width: 768px) {
-  .no-hover-mobile:hover {
+
+/* Disable hover animations on touch / mobile devices */
+@media (hover: none), (pointer: coarse) {
+  /* Disable transitions & transforms ONLY */
+  .disable-mobile-hover,
+  .disable-mobile-hover * {
+    transition: none !important;
     transform: none !important;
-    box-shadow: none !important;
+  }
+
+  /* Prevent hover pseudo-class without breaking card backgrounds or shadows */
+  .disable-mobile-hover:hover {
+    transition: none !important;
+    transform: none !important;
   }
 }
+
 /* GLOBAL HERO HEIGHT FIX — Works on ALL devices */
 .full-screen-section {
   height: 100dvh;       /* Best for modern browsers / iOS */

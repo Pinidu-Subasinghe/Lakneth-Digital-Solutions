@@ -9,9 +9,6 @@ import {
   Tags,
 } from "lucide-react";
 
-/* CONSTANTS */
-const HEADER_HEIGHT = 68;
-
 /* GET USERNAME FROM URL */
 const getFacebookUsername = (url) => {
   try {
@@ -52,7 +49,7 @@ const openWhatsApp = (page) => {
   );
 };
 
-/* FILTER PANEL COMPONENT */
+/* FILTER PANEL */
 function FilterPanel({
   minPrice,
   maxPrice,
@@ -66,103 +63,76 @@ function FilterPanel({
   setCategory,
   categories,
   onClearFilters,
-  errors,
 }) {
   return (
     <div className="w-full h-full overflow-y-auto pb-10">
-      <div className="flex items-center gap-3 pb-4 px-4 border-b border-gray-200 dark:border-gray-700 pt-4">
+      <div className="flex items-center gap-3 pb-4 px-4 border-b border-gray-300 dark:border-gray-700 pt-4">
         <SlidersHorizontal className="text-blue-600" size={22} />
         <h3 className="text-2xl font-bold">Filters</h3>
       </div>
 
       <div className="p-4 space-y-8">
-        {/* PRICE */}
-        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 shadow-sm">
+        {/* PRICE FILTER */}
+        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4">
           <div className="flex items-center gap-2 mb-3">
             <DollarSign className="text-green-600" size={20} />
             <h4 className="text-lg font-semibold">Price Range</h4>
           </div>
 
           <div className="grid grid-cols-2 gap-3">
-            <div>
-              <input
-                type="number"
-                placeholder="Min"
-                value={minPrice}
-                onChange={(e) => setMinPrice(e.target.value)}
-                onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
-                className="p-2 rounded-lg bg-white dark:bg-gray-700 shadow-sm w-full"
-              />
-              {errors.minPrice && (
-                <p className="text-red-500 text-sm">{errors.minPrice}</p>
-              )}
-            </div>
-
-            <div>
-              <input
-                type="number"
-                placeholder="Max"
-                value={maxPrice}
-                onChange={(e) => setMaxPrice(e.target.value)}
-                onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
-                className="p-2 rounded-lg bg-white dark:bg-gray-700 shadow-sm w-full"
-              />
-              {errors.maxPrice && (
-                <p className="text-red-500 text-sm">{errors.maxPrice}</p>
-              )}
-            </div>
+            <input
+              className="p-2 rounded-lg bg-white dark:bg-gray-700"
+              type="number"
+              placeholder="Min"
+              value={minPrice}
+              onChange={(e) => setMinPrice(e.target.value)}
+            />
+            <input
+              className="p-2 rounded-lg bg-white dark:bg-gray-700"
+              type="number"
+              placeholder="Max"
+              value={maxPrice}
+              onChange={(e) => setMaxPrice(e.target.value)}
+            />
           </div>
         </div>
 
-        {/* LIKES */}
-        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 shadow-sm">
+        {/* LIKES FILTER */}
+        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4">
           <div className="flex items-center gap-2 mb-3">
             <ThumbsUp className="text-purple-600" size={20} />
             <h4 className="text-lg font-semibold">Likes</h4>
           </div>
 
           <div className="grid grid-cols-2 gap-3">
-            <div>
-              <input
-                type="number"
-                placeholder="Min"
-                value={minLikes}
-                onChange={(e) => setMinLikes(e.target.value)}
-                onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
-                className="p-2 rounded-lg bg-white dark:bg-gray-700 shadow-sm w-full"
-              />
-              {errors.minLikes && (
-                <p className="text-red-500 text-sm">{errors.minLikes}</p>
-              )}
-            </div>
-
-            <div>
-              <input
-                type="number"
-                placeholder="Max"
-                value={maxLikes}
-                onChange={(e) => setMaxLikes(e.target.value)}
-                onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
-                className="p-2 rounded-lg bg-white dark:bg-gray-700 shadow-sm w-full"
-              />
-              {errors.maxLikes && (
-                <p className="text-red-500 text-sm">{errors.maxLikes}</p>
-              )}
-            </div>
+            <input
+              className="p-2 rounded-lg bg-white dark:bg-gray-700"
+              type="number"
+              placeholder="Min"
+              value={minLikes}
+              onChange={(e) => setMinLikes(e.target.value)}
+            />
+            <input
+              className="p-2 rounded-lg bg-white dark:bg-gray-700"
+              type="number"
+              placeholder="Max"
+              value={maxLikes}
+              onChange={(e) => setMaxLikes(e.target.value)}
+            />
           </div>
         </div>
 
-        {/* CATEGORY */}
-        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 shadow-sm">
+        {/* CATEGORY FILTER */}
+        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4">
           <div className="flex items-center gap-2 mb-3">
             <Tags className="text-orange-500" size={20} />
             <h4 className="text-lg font-semibold">Categories</h4>
           </div>
 
           <select
+            className="w-full p-2 rounded-lg bg-white dark:bg-gray-700"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className="w-full p-2 rounded-lg bg-white dark:bg-gray-700 shadow-sm"
           >
             <option value="">All Categories</option>
             {categories.map((c) => (
@@ -171,10 +141,9 @@ function FilterPanel({
           </select>
         </div>
 
-        {/* CLEAR FILTERS BUTTON */}
         <button
           onClick={onClearFilters}
-          className="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg shadow font-medium"
+          className="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg"
         >
           Clear Filters
         </button>
@@ -194,114 +163,82 @@ export default function FacebookSelling() {
   const [maxLikes, setMaxLikes] = useState("");
   const [category, setCategory] = useState("");
 
-  /* VALIDATION (NO STATE UPDATE INSIDE RENDER → no re-render loop) */
-  const validateFields = () => {
-    let newErrors = {};
-
-    const invalid = (v) =>
-      v !== "" && (Number(v) <= 0 || isNaN(Number(v)));
-
-    if (invalid(minPrice)) newErrors.minPrice = "Enter a valid number above 0";
-    if (invalid(maxPrice)) newErrors.maxPrice = "Enter a valid number above 0";
-    if (invalid(minLikes)) newErrors.minLikes = "Enter a valid number above 0";
-    if (invalid(maxLikes)) newErrors.maxLikes = "Enter a valid number above 0";
-
-    return newErrors;
-  };
-
-  const errors = validateFields();
-  const isValid = Object.keys(errors).length === 0;
-
-  /* CLEAR FILTERS */
-  const clearFilters = () => {
-    setMinPrice("");
-    setMaxPrice("");
-    setMinLikes("");
-    setMaxLikes("");
-    setCategory("");
-  };
-
-  /* CATEGORY LIST */
-  const allCategories = Array.from(
+  const categories = Array.from(
     new Set(fbData.flatMap((p) => p.categories))
   ).sort();
 
-  /* FILTER LOGIC (only if valid) */
-  const filteredPages = isValid
-    ? fbData.filter((p) => {
-        const priceMatch =
-          (!minPrice || p.price >= Number(minPrice)) &&
-          (!maxPrice || p.price <= Number(maxPrice));
+  const filteredPages = fbData.filter((p) => {
+    const priceMatch =
+      (!minPrice || p.price >= minPrice) && (!maxPrice || p.price <= maxPrice);
 
-        const likesMatch =
-          (!minLikes || p.likes >= Number(minLikes)) &&
-          (!maxLikes || p.likes <= Number(maxLikes));
+    const likesMatch =
+      (!minLikes || p.likes >= minLikes) && (!maxLikes || p.likes <= maxLikes);
 
-        const categoryMatch = !category || p.categories.includes(category);
+    const categoryMatch = !category || p.categories.includes(category);
 
-        return priceMatch && likesMatch && categoryMatch;
-      })
-    : fbData;
+    return priceMatch && likesMatch && categoryMatch;
+  });
 
-  /* MOBILE ANIMATIONS */
+  /* OPEN DRAWER */
   const openDrawer = () => {
     setClosing(false);
     setFiltersOpen(true);
   };
 
+  /* CLOSE DRAWER WITH ANIMATION */
   const closeDrawer = () => {
     setClosing(true);
-    setTimeout(() => {
-      setFiltersOpen(false);
-      setClosing(false);
-    }, 300);
+    setTimeout(() => setFiltersOpen(false), 250);
   };
 
   return (
     <section className="relative bg-gray-50 dark:bg-gray-900 min-h-screen">
-      {/* HEADER */}
-      <div className="flex justify-between items-center px-6 md:ml-[300px] pt-6 mb-5">
-        <h1 className="text-4xl font-bold">Facebook Page Selling</h1>
+      {/* FIXED FILTER BUTTON (Moodle-style) */}
+      <div className="group fixed top-14 left-0 z-50 flex items-center">
+        {/* FILTER BUTTON */}
         <button
           onClick={openDrawer}
-          className="md:hidden bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 shadow"
+          className="
+      bg-blue-600 text-white
+      px-2.5 py-3 flex items-center
+      rounded-r-xl shadow-lg
+      hover:bg-blue-700 transition
+    "
         >
-          <Filter size={18} /> Filters
+          <Filter size={18} />
         </button>
+
+        {/* HOVER LABEL - only visible on desktop */}
+        <span
+          className="
+      hidden md:inline-block               /* hide on mobile */
+      ml-2 px-3 py-1
+      bg-blue-600 text-white text-sm rounded-lg shadow
+      opacity-0 group-hover:opacity-100
+      translate-x-[-10px] group-hover:translate-x-0
+      transition-all duration-200
+      pointer-events-none
+    "
+        >
+          Filters
+        </span>
       </div>
 
-      {/* DESKTOP FILTER */}
-      <aside
-        className="hidden md:block fixed left-0 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700"
-        style={{
-          top: HEADER_HEIGHT,
-          height: `calc(100vh - ${HEADER_HEIGHT}px)`,
-          width: "280px",
-        }}
-      >
-        <FilterPanel
-          minPrice={minPrice}
-          maxPrice={maxPrice}
-          minLikes={minLikes}
-          maxLikes={maxLikes}
-          setMinPrice={setMinPrice}
-          setMaxPrice={setMaxPrice}
-          setMinLikes={setMinLikes}
-          setMaxLikes={setMaxLikes}
-          category={category}
-          setCategory={setCategory}
-          categories={allCategories}
-          onClearFilters={clearFilters}
-          errors={errors}
-        />
-      </aside>
+      {/* PAGE TITLE */}
+      <div className="px-6 pt-8 mb-6">
+        <h1 className="text-3xl md:text-4xl font-bold">
+          Facebook Page Selling
+        </h1>
+      </div>
 
-      {/* MOBILE FILTER DRAWER */}
+      {/* DRAWER (SLIDE ANIMATION) */}
       {filtersOpen && (
-        <div className="fixed inset-0 bg-black/50 z-50 md:hidden flex">
+        <div className="fixed inset-0 bg-black/40 z-50 flex">
           <div
-            className={`w-72 bg-white dark:bg-gray-800 p-6 shadow-xl h-full 
-              ${closing ? "animate-slide-out" : "animate-slide-in"}`}
+            className={`
+              w-72 bg-white dark:bg-gray-800 shadow-lg p-6
+              ${closing ? "animate-slide-out" : "animate-slide-in"}
+            `}
           >
             <button
               onClick={closeDrawer}
@@ -321,48 +258,123 @@ export default function FacebookSelling() {
               setMaxLikes={setMaxLikes}
               category={category}
               setCategory={setCategory}
-              categories={allCategories}
-              onClearFilters={clearFilters}
-              errors={errors}
+              categories={categories}
+              onClearFilters={() => {
+                setMinPrice("");
+                setMaxPrice("");
+                setMinLikes("");
+                setMaxLikes("");
+                setCategory("");
+              }}
             />
           </div>
 
+          {/* Click Outside to Close */}
           <div className="flex-1" onClick={closeDrawer}></div>
         </div>
       )}
 
-      {/* PAGE CARDS */}
-      <div className="px-6 md:ml-[300px] pb-20">
+      {/* PAGE CONTENT CARDS */}
+      <div className="px-6 pb-20">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {filteredPages.map((page) => (
             <div
               key={page.id}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition p-5 no-hover-mobile"
+              className="
+    relative
+    bg-white dark:bg-gray-800 rounded-xl shadow-md p-5
+    transition-all duration-300
+    hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02]
+    overflow-hidden  /* prevents content from escaping */
+  "
             >
+              {/* STATUS RIBBON */}
+              {page.status === "available" && (
+                <div
+                  className="
+  absolute top-3 left-0 
+  bg-green-600 text-white text-xs font-semibold
+  px-3 py-1 rounded-r-lg shadow-lg
+  z-20
+"
+                >
+                  Available
+                </div>
+              )}
+
+              {page.status === "sold" && (
+                <div
+                  className="
+  absolute top-3 left-0 
+  bg-red-600 text-white text-xs font-semibold
+  px-3 py-1 rounded-r-lg shadow-lg
+  z-20
+"
+                >
+                  Sold Out
+                </div>
+              )}
+
+              {/* DISCOUNT BADGE */}
+              {page.discount > 0 && (
+                <div
+                  className="
+  absolute top-3 right-3 
+  bg-pink-600 text-white text-xs font-bold
+  px-2 py-1 rounded-lg shadow
+  z-20
+"
+                >
+                  -{page.discount}%
+                </div>
+              )}
+
               <img
                 src={getHDFacebookImage(page.url)}
                 onError={(e) => (e.target.src = "/placeholder_fb.png")}
-                className="w-full h-44 object-cover rounded-lg"
-                alt={page.name}
+                alt={page.name + " Facebook Page Image"}
+                className="
+    w-full h-44 object-cover rounded-lg
+    transition-all duration-300 hover:opacity-90
+    z-10 relative
+  "
               />
 
               <h2 className="text-xl font-semibold mt-4">{page.name}</h2>
 
-              <div className="text-gray-600 dark:text-gray-300 mt-2 space-y-1 text-sm">
-                <p>
-                  <strong>Category:</strong> {page.categories.join(", ")}
-                </p>
-                <p>
-                  <strong>Likes:</strong> {page.likes.toLocaleString()}
-                </p>
-                <p>
-                  <strong>Price:</strong> Rs. {page.price.toLocaleString()}
-                </p>
+              <p className="text-gray-600 dark:text-gray-300 mt-2 text-sm">
+                <strong>Category:</strong> {page.categories.join(", ")}
+              </p>
+
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
+                <strong>Likes:</strong> {page.likes.toLocaleString()}
+              </p>
+
+              {/* PRICE SECTION */}
+              <div className="mt-2 text-sm">
+                {page.discount > 0 ? (
+                  <div className="flex items-center gap-2">
+                    <span className="line-through text-gray-500">
+                      Rs. {page.price.toLocaleString()}
+                    </span>
+                    <span className="font-bold text-green-600 text-lg">
+                      Rs.{" "}
+                      {(
+                        page.price -
+                        (page.price * page.discount) / 100
+                      ).toLocaleString()}
+                    </span>
+                  </div>
+                ) : (
+                  <span className="font-semibold text-gray-900 dark:text-gray-200 text-lg">
+                    Rs. {page.price.toLocaleString()}
+                  </span>
+                )}
               </div>
 
               <button
                 onClick={() => openWhatsApp(page)}
-                className="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg shadow font-medium"
+                className="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg shadow transition"
               >
                 Contact on WhatsApp
               </button>
