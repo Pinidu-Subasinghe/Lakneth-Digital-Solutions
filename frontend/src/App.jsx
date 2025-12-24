@@ -111,7 +111,7 @@ function App() {
         startDay={23}
         endMonth={5}
         endDay={23}
-        forceVisible={true}
+        //forceVisible={true} // Uncomment to test outside Vesak period
       >
         <VesakLanternGIFs />
       </FestiveEffect>
