@@ -14,7 +14,7 @@ import LK from "../assets/lk.png";
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
-      <div className="max-w-7xl mx-auto px-6 py-16 grid gap-10 sm:grid-cols-2 md:grid-cols-4">
+      <div className="max-w-7xl mx-auto px-6 py-12 pb-4 grid gap-10 sm:grid-cols-2 md:grid-cols-4">
         {/* ===== COMPANY INFO + LOGO ===== */}
         <div className="flex flex-col items-start text-left">
           <div className="flex items-center gap-3 mb-3">
