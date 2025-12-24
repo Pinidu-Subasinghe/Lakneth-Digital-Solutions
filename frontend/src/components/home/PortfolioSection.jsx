@@ -20,7 +20,7 @@ export default function PortfolioSection() {
           {displayProjects.map((p) => (
             <div
               key={p.id}
-              className="group relative rounded-xl overflow-hidden border border-gray-800 bg-gray-800/80 shadow-md transition-all duration-300 transform backdrop-blur-md lg:hover:-translate-y-2 lg:hover:shadow-2xl"
+              className="group relative rounded-xl overflow-hidden border border-gray-600 bg-gray-800/80 shadow-md transition-all duration-300 transform backdrop-blur-md lg:hover:-translate-y-2 lg:hover:shadow-2xl"
             >
               {/* Subtle Hover Gradient Border (same as FeaturesSection) */}
               <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
