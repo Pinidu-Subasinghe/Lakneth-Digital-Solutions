@@ -7,7 +7,7 @@ export default function PortfolioSection() {
   const displayProjects = projects.slice(0, 6);
 
   return (
-    <section className="py-20 bg-gray-950 border-t border-gray-800 transition-colors duration-300 relative overflow-hidden">
+    <section className="py-20 bg-gray-900 border-t border-gray-800 transition-colors duration-300 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
         {/* Section Title */}
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-white">
