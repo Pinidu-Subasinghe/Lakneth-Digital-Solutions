@@ -9,6 +9,7 @@ import {
   Linkedin,
 } from "lucide-react";
 import laknethLogo from "../assets/Lakneth Logo.png"; // ✅ logo path inside src/assets/
+import LK from "../assets/lk.png";
 
 export default function Footer() {
   return (
@@ -34,39 +35,25 @@ export default function Footer() {
 
         {/* ===== QUICK LINKS ===== */}
         <div>
-          <h3 className="text-lg font-semibold mb-3 text-white">
-            Quick Links
-          </h3>
+          <h3 className="text-lg font-semibold mb-3 text-white">Quick Links</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link
-                to="/"
-                className="hover:text-blue-400 transition"
-              >
+              <Link to="/" className="hover:text-blue-400 transition">
                 Home
               </Link>
             </li>
             <li>
-              <Link
-                to="/services"
-                className="hover:text-blue-400 transition"
-              >
+              <Link to="/services" className="hover:text-blue-400 transition">
                 Services
               </Link>
             </li>
             <li>
-              <Link
-                to="/portfolio"
-                className="hover:text-blue-400 transition"
-              >
+              <Link to="/portfolio" className="hover:text-blue-400 transition">
                 Portfolio
               </Link>
             </li>
             <li>
-              <Link
-                to="/contact"
-                className="hover:text-blue-400 transition"
-              >
+              <Link to="/contact" className="hover:text-blue-400 transition">
                 Contact
               </Link>
             </li>
@@ -75,15 +62,10 @@ export default function Footer() {
 
         {/* ===== CONTACT INFO ===== */}
         <div>
-          <h3 className="text-lg font-semibold mb-3 text-white">
-            Contact Us
-          </h3>
+          <h3 className="text-lg font-semibold mb-3 text-white">Contact Us</h3>
           <ul className="space-y-2 text-sm">
             <li className="flex items-start gap-2">
-              <MapPin
-                size={16}
-                className="text-blue-400 mt-1"
-              />
+              <MapPin size={16} className="text-blue-400 mt-1" />
               <span>
                 112/H/13, Raja Samaranayaka Mawatha, Alubomulla, Panadura
               </span>
@@ -115,9 +97,7 @@ export default function Footer() {
 
         {/* ===== SOCIALS ===== */}
         <div className="flex flex-col items-center md:items-start">
-          <h3 className="text-lg font-semibold mb-3 text-white">
-            Follow Us
-          </h3>
+          <h3 className="text-lg font-semibold mb-3 text-white">Follow Us</h3>
           <div className="flex gap-5">
             <a
               href="https://web.facebook.com/people/Lakneth-Digital-Social-Media-Marketing/100064813908325/"
@@ -161,8 +141,14 @@ export default function Footer() {
           </span>
           . All Rights Reserved.
         </p>
-        <p className="text-gray-400">
-          Empowering Digital Growth 💡
+        <p className="text-gray-400 flex items-center justify-center gap-1">
+          Made in
+          <img
+            src={LK}
+            alt="Sri Lanka Flag"
+            className="w-5 h-auto inline-block"
+          />
+          with <span className="text-red-500">&#10084;</span>
         </p>
       </div>
     </footer>
