@@ -19,15 +19,24 @@ import SEOAnalytics from "./pages/SeoAnalytics";
 import SocialMarketing from "./pages/SocialMarketing";
 import Branding from "./pages/Branding";
 
-/* ❄️ Snow Layer (Auto-pauses when tab inactive) */
+/* ❄️ Snow Layer (Auto-pauses when tab inactive & only active in December) */
 function SnowLayer() {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    // Check current date
+    const now = new Date();
+    const month = now.getMonth() + 1; // JS months are 0-based
+    const day = now.getDate();
+
+    // Active from Dec 1 to Dec 31
+    if (month === 12 && day >= 1 && day <= 31) {
+      setVisible(true);
+    }
+
     const handleVisibility = () => {
       setVisible(!document.hidden);
     };
-
     document.addEventListener("visibilitychange", handleVisibility);
     return () =>
       document.removeEventListener("visibilitychange", handleVisibility);
@@ -38,8 +47,8 @@ function SnowLayer() {
   return (
     <Snowfall
       color="white"
-      snowflakeCount={100} // ⬅️ safe for mobile
-      speed={[0.6, 1]} // ⬅️ smooth & light
+      snowflakeCount={100} // safe for mobile
+      speed={[0.6, 1]} // smooth & light
       wind={[-0.3, 0.3]}
       radius={[0.8, 2]}
       style={{
@@ -57,7 +66,7 @@ function SnowLayer() {
 function App() {
   return (
     <Router>
-      {/* ❄️ Snow */}
+      {/* ❄️ Snow only in December */}
       <SnowLayer />
 
       <ScrollToTop />
