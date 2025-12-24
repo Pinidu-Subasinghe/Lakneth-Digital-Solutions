@@ -7,7 +7,7 @@ export default function HeroImages() {
   return (
     <div className="relative w-full flex items-center justify-center">
       {/* Back card */}
-      <div className="hidden sm:block absolute -left-8 top-8 w-44 sm:w-56 md:w-64 lg:w-72 transform rotate-[-6deg] bg-white/5 dark:bg-white/3 rounded-2xl shadow-2xl">
+      <div className="hidden sm:block absolute -left-8 top-8 w-44 sm:w-56 md:w-64 lg:w-72 transform rotate-[-6deg] bg-white/3 rounded-2xl shadow-2xl">
         <img
           src={require("../../assets/marketing3.png")}
           alt="Marketing illustration layer 3"
@@ -17,7 +17,7 @@ export default function HeroImages() {
       </div>
 
       {/* Middle card */}
-      <div className="absolute -right-6 top-20 w-52 sm:w-64 md:w-72 lg:w-80 transform rotate-3 bg-white/6 dark:bg-white/4 rounded-2xl shadow-2xl">
+      <div className="absolute -right-6 top-20 w-52 sm:w-64 md:w-72 lg:w-80 transform rotate-3 bg-white/4 rounded-2xl shadow-2xl">
         <img
           src={require("../../assets/marketing.png")}
           alt="Marketing illustration layer 2"

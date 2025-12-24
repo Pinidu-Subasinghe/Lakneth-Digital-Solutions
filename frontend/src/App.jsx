@@ -27,14 +27,15 @@ function App() {
           width: "100vw",
           height: "100vh",
           zIndex: 9999,
-          pointerEvents: "none"
+          pointerEvents: "none",
+          opacity: 0.7,
         }}
       />
 
       <ScrollToTop />
       <Header />
 
-      <main className="bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-100">
+      <main className="bg-gray-950 text-gray-100">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />

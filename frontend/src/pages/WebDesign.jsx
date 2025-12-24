@@ -43,11 +43,11 @@ export default function WebDesign() {
   };
 
   return (
-    <section className="min-h-screen px-6 py-12 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <section className="min-h-screen px-6 py-12 bg-gray-900 text-gray-200">
       <div className="max-w-7xl mx-auto">
         {/* PAGE TITLE */}
         <h1 className="text-4xl font-bold mb-4">Web Design & Development</h1>
-        <p className="text-gray-600 dark:text-gray-300 text-lg mb-10">
+        <p className="text-gray-300 text-lg mb-10">
           We design modern, responsive, and SEO-friendly websites tailored to
           your brand. Whether it's a business website, portfolio, or e-commerce
           platform, we deliver high-quality solutions with fast performance and
@@ -67,8 +67,8 @@ export default function WebDesign() {
             return (
               <div
                 key={pkg.id}
-                className="relative bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 hover:shadow-xl 
-  transition-all border border-gray-200 dark:border-gray-700 flex flex-col"
+                className="relative bg-gray-800 rounded-xl shadow-md p-6 hover:shadow-xl 
+  transition-all border border-gray-700 flex flex-col"
               >
                 {/* DISCOUNT BADGE */}
                 {pkg.discount > 0 && (
@@ -90,7 +90,7 @@ export default function WebDesign() {
                 <h3 className="text-xl font-semibold mt-3 h-10">{pkg.title}</h3>
 
                 {/* DESCRIPTION - FIXED HEIGHT */}
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 h-12">
+                <p className="text-sm text-gray-400 mt-2 h-12">
                   {pkg.shortDesc}
                 </p>
 
@@ -107,7 +107,7 @@ export default function WebDesign() {
                       </p>
                     </>
                   ) : (
-                    <p className="text-gray-900 dark:text-gray-100 font-bold text-xl leading-none">
+                    <p className="text-gray-100 font-bold text-xl leading-none">
                       Rs. {pkg.price.toLocaleString()}
                     </p>
                   )}
@@ -134,7 +134,7 @@ export default function WebDesign() {
           {data.projects.map((project) => (
             <div
               key={project.id}
-              className="bg-white dark:bg-gray-800 shadow-md border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden hover:shadow-xl transition"
+              className="bg-gray-800 shadow-md border border-gray-700 rounded-xl overflow-hidden hover:shadow-xl transition"
             >
               <img
                 src={project.image}
@@ -151,7 +151,7 @@ export default function WebDesign() {
 
               <div className="p-5">
                 <h3 className="text-lg font-semibold">{project.name}</h3>
-                <p class0Name="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                <p className="text-sm text-gray-400 mt-2">
                   {project.shortDesc}
                 </p>
 
@@ -176,7 +176,7 @@ export default function WebDesign() {
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
           <div
             className="
-        bg-white dark:bg-gray-800 rounded-xl shadow-xl 
+        bg-gray-800 rounded-xl shadow-xl 
         p-6 w-[90%] max-w-lg mx-auto
         max-h-[90vh] overflow-y-auto
         animate-scale-in relative
@@ -194,7 +194,7 @@ export default function WebDesign() {
               {selectedPackage.title}
             </h2>
 
-            <p className="text-gray-500 dark:text-gray-300 mb-4">
+            <p className="text-gray-300 mb-4">
               {selectedPackage.fullDesc}
             </p>
 
@@ -204,7 +204,7 @@ export default function WebDesign() {
               {selectedPackage.features.map((feature, index) => (
                 <li
                   key={index}
-                  className="flex items-center gap-2 text-gray-700 dark:text-gray-300"
+                  className="flex items-center gap-2 text-gray-300"
                 >
                   <CheckCircle className="text-green-500" size={18} />
                   {feature}

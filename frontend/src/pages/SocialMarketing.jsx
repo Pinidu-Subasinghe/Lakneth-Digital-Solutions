@@ -41,10 +41,10 @@ export default function SocialMarketing() {
   };
 
   return (
-    <section className="min-h-screen px-6 py-12 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <section className="min-h-screen px-6 py-12 bg-gray-900 text-gray-200">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold mb-4">Social Media Marketing</h1>
-        <p className="text-gray-600 dark:text-gray-300 text-lg mb-10">
+        <p className="text-gray-300 text-lg mb-10">
           Increase brand awareness, engagement, and conversions with optimized
           social media campaigns and high-quality content.
         </p>
@@ -62,8 +62,8 @@ export default function SocialMarketing() {
             return (
               <div
                 key={pkg.id}
-                className="relative bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 hover:shadow-xl
-  transition-all border border-gray-200 dark:border-gray-700 flex flex-col"
+                className="relative bg-gray-800 rounded-xl shadow-md p-6 hover:shadow-xl
+  transition-all border border-gray-700 flex flex-col"
               >
                 {/* DISCOUNT BADGE */}
                 {pkg.discount > 0 && (
@@ -85,7 +85,7 @@ export default function SocialMarketing() {
                 <h3 className="text-xl font-semibold mt-3 h-8">{pkg.title}</h3>
 
                 {/* SHORT DESCRIPTION */}
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 h-12">
+                <p className="text-sm text-gray-400 mt-2 h-12">
                   {pkg.shortDesc}
                 </p>
 
@@ -101,7 +101,7 @@ export default function SocialMarketing() {
                       </p>
                     </>
                   ) : (
-                    <p className="text-gray-900 dark:text-gray-100 font-bold text-xl leading-none">
+                    <p className="text-gray-100 font-bold text-xl leading-none">
                       Rs. {pkg.price.toLocaleString()}
                     </p>
                   )}
@@ -128,7 +128,7 @@ export default function SocialMarketing() {
           {data.projects.map((project) => (
             <div
               key={project.id}
-              className="bg-white dark:bg-gray-800 shadow-md border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden hover:shadow-xl transition"
+              className="bg-gray-800 shadow-md border border-gray-700 rounded-xl overflow-hidden hover:shadow-xl transition"
             >
               <img
                 src={project.image}
@@ -145,7 +145,7 @@ export default function SocialMarketing() {
 
               <div className="p-5">
                 <h3 className="text-lg font-semibold">{project.name}</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                <p className="text-sm text-gray-400 mt-2">
                   {project.shortDesc}
                 </p>
 
@@ -168,7 +168,7 @@ export default function SocialMarketing() {
       {/* MODAL */}
       {selectedPackage && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-6 w-[90%] max-w-lg mx-auto max-h-[90vh] overflow-y-auto animate-scale-in relative">
+          <div className="bg-gray-800 rounded-xl shadow-xl p-6 w-[90%] max-w-lg mx-auto max-h-[90vh] overflow-y-auto animate-scale-in relative">
             <button
               className="absolute top-3 right-3 p-2 bg-red-600 hover:bg-red-700 text-white rounded-full"
               onClick={() => setSelectedPackage(null)}
@@ -179,7 +179,7 @@ export default function SocialMarketing() {
             <h2 className="text-2xl font-semibold mb-2">
               {selectedPackage.title}
             </h2>
-            <p className="text-gray-500 dark:text-gray-300 mb-4">
+            <p className="text-gray-300 mb-4">
               {selectedPackage.fullDesc}
             </p>
 
@@ -188,7 +188,7 @@ export default function SocialMarketing() {
               {selectedPackage.features.map((f, i) => (
                 <li
                   key={i}
-                  className="flex items-center gap-2 text-gray-700 dark:text-gray-300"
+                  className="flex items-center gap-2 text-gray-300"
                 >
                   <CheckCircle className="text-green-500" size={18} />
                   {f}

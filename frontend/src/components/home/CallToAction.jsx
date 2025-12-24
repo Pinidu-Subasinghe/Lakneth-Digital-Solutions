@@ -5,11 +5,11 @@ import marketing3Img from "../../assets/marketing3.png";
 
 export default function CallToAction() {
   return (
-    <section className="relative overflow-hidden py-24 px-6 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 dark:from-blue-900 dark:via-indigo-900 dark:to-purple-900 text-white text-center">
+    <section className="relative overflow-hidden py-24 px-6 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 text-white text-center">
       {/* Decorative Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.15)_0%,transparent_70%)]"></div>
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-white/10 dark:bg-white/5 rounded-full blur-3xl"></div>
-      <div className="absolute -top-20 -right-20 w-80 h-80 bg-blue-400/20 dark:bg-blue-300/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+      <div className="absolute -top-20 -right-20 w-80 h-80 bg-blue-300/10 rounded-full blur-3xl"></div>
 
       {/* Floating Side Images */}
       <motion.img
@@ -44,7 +44,7 @@ export default function CallToAction() {
           <span className="text-yellow-300">Digital Success Story</span>
         </h2>
 
-        <p className="text-base sm:text-lg md:text-xl text-blue-100 dark:text-gray-300 mb-10 max-w-2xl">
+        <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-10 max-w-2xl">
           Whether you need web design, social media strategy, or SEO — Lakneth
           Digital Solutions will help you grow faster, smarter, and stronger
           online.

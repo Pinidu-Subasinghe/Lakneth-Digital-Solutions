@@ -37,11 +37,11 @@ export default function Contact() {
   };
 
   return (
-    <section className="bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-100">
+    <section className="bg-gray-950 text-gray-100">
       <div className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12">
         {/* LEFT — CONTACT FORM */}
         <div>
-          <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+          <h2 className="text-2xl font-bold mb-6 text-white">
             Send Us a Message
           </h2>
 
@@ -55,7 +55,7 @@ export default function Contact() {
                 placeholder="Enter your name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-blue-500 outline-none"
+                className="w-full p-3 rounded-lg border border-gray-700 bg-gray-900 focus:ring-2 focus:ring-blue-500 outline-none"
                 required
               />
             </div>
@@ -69,7 +69,7 @@ export default function Contact() {
                 placeholder="Subject of your message"
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
-                className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-blue-500 outline-none"
+                className="w-full p-3 rounded-lg border border-gray-700 bg-gray-900 focus:ring-2 focus:ring-blue-500 outline-none"
                 required
               />
             </div>
@@ -83,7 +83,7 @@ export default function Contact() {
                 placeholder="Write your message..."
                 value={msg}
                 onChange={(e) => setMsg(e.target.value)}
-                className="resize-none w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-blue-500 outline-none"
+                className="resize-none w-full p-3 rounded-lg border border-gray-700 bg-gray-900 focus:ring-2 focus:ring-blue-500 outline-none"
                 required
               ></textarea>
             </div>
@@ -99,14 +99,14 @@ export default function Contact() {
 
         {/* RIGHT — CONTACT INFO + MAP */}
         <div className="flex flex-col justify-center">
-          <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+          <h2 className="text-2xl font-bold mb-6 text-white">
             Get in Touch
           </h2>
 
-          <ul className="space-y-4 text-gray-700 dark:text-gray-300">
+          <ul className="space-y-4 text-gray-300">
             <li className="flex items-start gap-3">
               <MapPin
-                className="text-blue-600 dark:text-blue-400 mt-1"
+                className="text-blue-400 mt-1"
                 size={20}
               />
               <span>Panadura, Sri Lanka</span>
@@ -114,12 +114,12 @@ export default function Contact() {
 
             <li className="flex items-start gap-3">
               <Phone
-                className="text-blue-600 dark:text-blue-400 mt-1"
+                className="text-blue-400 mt-1"
                 size={20}
               />
               <a
                 href="tel:+94756343816"
-                className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+                className="hover:text-blue-400 transition"
               >
                 +94 75 634 3816
               </a>
@@ -127,12 +127,12 @@ export default function Contact() {
 
             <li className="flex items-start gap-3">
               <Mail
-                className="text-blue-600 dark:text-blue-400 mt-1"
+                className="text-blue-400 mt-1"
                 size={20}
               />
               <a
                 href="mailto:info@laknethdigital.lk"
-                className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+                className="hover:text-blue-400 transition"
               >
                 info@laknethdigital.lk
               </a>
@@ -140,7 +140,7 @@ export default function Contact() {
 
             <li className="flex items-start gap-3">
               <Clock
-                className="text-blue-600 dark:text-blue-400 mt-1"
+                className="text-blue-400 mt-1"
                 size={20}
               />
               <span>Mon – Sun: 9.00am – 10.00pm</span>
@@ -167,7 +167,7 @@ export default function Contact() {
               href="https://maps.app.goo.gl/dqyUtPBmNqLrTKYj7"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-2 text-blue-600 dark:text-blue-400 font-semibold hover:underline"
+              className="inline-block mt-2 text-blue-400 font-semibold hover:underline"
             >
               📍 View on Google Maps
             </a>

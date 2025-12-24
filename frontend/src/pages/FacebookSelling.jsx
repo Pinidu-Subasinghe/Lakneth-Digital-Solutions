@@ -96,14 +96,14 @@ function FilterPanel({
 }) {
   return (
     <div className="w-full h-full overflow-y-auto pb-10">
-      <div className="flex items-center gap-3 pb-4 px-4 border-b border-gray-300 dark:border-gray-700 pt-4">
+      <div className="flex items-center gap-3 pb-4 px-4 border-b border-gray-700 pt-4">
         <SlidersHorizontal className="text-blue-600" size={22} />
         <h3 className="text-2xl font-bold">Filters</h3>
       </div>
 
       <div className="p-4 space-y-8">
         {/* PRICE FILTER */}
-        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4">
+        <div className="bg-gray-800 rounded-xl p-4">
           <div className="flex items-center gap-2 mb-3">
             <DollarSign className="text-green-600" size={20} />
             <h4 className="text-lg font-semibold">Price Range</h4>
@@ -111,14 +111,14 @@ function FilterPanel({
 
           <div className="grid grid-cols-2 gap-3">
             <input
-              className="p-2 rounded-lg bg-white dark:bg-gray-700"
+              className="p-2 rounded-lg bg-gray-700"
               type="number"
               placeholder="Min"
               value={minPrice}
               onChange={(e) => setMinPrice(e.target.value)}
             />
             <input
-              className="p-2 rounded-lg bg-white dark:bg-gray-700"
+              className="p-2 rounded-lg bg-gray-700"
               type="number"
               placeholder="Max"
               value={maxPrice}
@@ -128,7 +128,7 @@ function FilterPanel({
         </div>
 
         {/* LIKES FILTER */}
-        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4">
+        <div className="bg-gray-800 rounded-xl p-4">
           <div className="flex items-center gap-2 mb-3">
             <ThumbsUp className="text-purple-600" size={20} />
             <h4 className="text-lg font-semibold">Likes</h4>
@@ -136,14 +136,14 @@ function FilterPanel({
 
           <div className="grid grid-cols-2 gap-3">
             <input
-              className="p-2 rounded-lg bg-white dark:bg-gray-700"
+              className="p-2 rounded-lg bg-gray-700"
               type="number"
               placeholder="Min"
               value={minLikes}
               onChange={(e) => setMinLikes(e.target.value)}
             />
             <input
-              className="p-2 rounded-lg bg-white dark:bg-gray-700"
+              className="p-2 rounded-lg bg-gray-700"
               type="number"
               placeholder="Max"
               value={maxLikes}
@@ -153,14 +153,14 @@ function FilterPanel({
         </div>
 
         {/* CATEGORY FILTER */}
-        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4">
+        <div className="bg-gray-800 rounded-xl p-4">
           <div className="flex items-center gap-2 mb-3">
             <Tags className="text-orange-500" size={20} />
             <h4 className="text-lg font-semibold">Categories</h4>
           </div>
 
           <select
-            className="w-full p-2 rounded-lg bg-white dark:bg-gray-700"
+            className="w-full p-2 rounded-lg bg-gray-700"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           >
@@ -222,7 +222,7 @@ export default function FacebookSelling() {
   };
 
   return (
-    <section className="relative bg-gray-50 dark:bg-gray-900 min-h-screen">
+    <section className="relative bg-gray-900 min-h-screen">
       {/* FIXED FILTER BUTTON (Moodle-style) */}
       <div className="group fixed top-14 left-0 z-50 flex items-center">
         {/* FILTER BUTTON */}
@@ -266,7 +266,7 @@ export default function FacebookSelling() {
         <div className="fixed inset-0 bg-black/40 z-50 flex">
           <div
             className={`
-              w-72 bg-white dark:bg-gray-800 shadow-lg p-6
+              w-72 bg-gray-800 shadow-lg p-6
               ${closing ? "animate-slide-out" : "animate-slide-in"}
             `}
           >
@@ -326,7 +326,7 @@ export default function FacebookSelling() {
             return (
               <div
                 key={page.id}
-                className="relative bg-white dark:bg-gray-800 rounded-xl shadow-md p-5 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] overflow-hidden flex flex-col"
+                className="relative bg-gray-800 rounded-xl shadow-md p-5 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] overflow-hidden flex flex-col"
               >
                 {/* STATUS RIBBON */}
                 {page.status === "available" && (
@@ -374,11 +374,11 @@ export default function FacebookSelling() {
                   </span>
                 </div>
 
-                <p className="text-gray-600 dark:text-gray-300 mt-1 text-sm">
+                <p className="text-gray-300 mt-1 text-sm">
                   <strong>Category:</strong> {page.categories.join(", ")}
                 </p>
 
-                <p className="text-gray-600 dark:text-gray-300 text-sm">
+                <p className="text-gray-300 text-sm">
                   <strong>Likes:</strong> {page.likes.toLocaleString()}
                 </p>
 
@@ -398,7 +398,7 @@ export default function FacebookSelling() {
                       </span>
                     </div>
                   ) : (
-                    <span className="font-bold text-gray-900 dark:text-gray-200 text-lg">
+                    <span className="font-bold text-gray-200 text-lg">
                       Rs. {page.price.toLocaleString()}
                     </span>
                   )}

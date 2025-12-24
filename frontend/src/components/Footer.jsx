@@ -12,7 +12,7 @@ import laknethLogo from "../assets/Lakneth Logo.png"; // ✅ logo path inside sr
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300">
+    <footer className="bg-gray-900 text-gray-300">
       <div className="max-w-7xl mx-auto px-6 py-16 grid gap-10 sm:grid-cols-2 md:grid-cols-4">
         {/* ===== COMPANY INFO + LOGO ===== */}
         <div className="flex flex-col items-start text-left">
@@ -22,7 +22,7 @@ export default function Footer() {
               alt="Lakneth Digital Solutions Logo"
               className="w-12 h-12 object-contain rounded-lg shadow-sm"
             />
-            <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+            <h2 className="text-2xl font-bold text-blue-400">
               Lakneth Digital Solutions
             </h2>
           </div>
@@ -34,14 +34,14 @@ export default function Footer() {
 
         {/* ===== QUICK LINKS ===== */}
         <div>
-          <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">
+          <h3 className="text-lg font-semibold mb-3 text-white">
             Quick Links
           </h3>
           <ul className="space-y-2 text-sm">
             <li>
               <Link
                 to="/"
-                className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+                className="hover:text-blue-400 transition"
               >
                 Home
               </Link>
@@ -49,7 +49,7 @@ export default function Footer() {
             <li>
               <Link
                 to="/services"
-                className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+                className="hover:text-blue-400 transition"
               >
                 Services
               </Link>
@@ -57,7 +57,7 @@ export default function Footer() {
             <li>
               <Link
                 to="/portfolio"
-                className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+                className="hover:text-blue-400 transition"
               >
                 Portfolio
               </Link>
@@ -65,7 +65,7 @@ export default function Footer() {
             <li>
               <Link
                 to="/contact"
-                className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+                className="hover:text-blue-400 transition"
               >
                 Contact
               </Link>
@@ -75,39 +75,39 @@ export default function Footer() {
 
         {/* ===== CONTACT INFO ===== */}
         <div>
-          <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">
+          <h3 className="text-lg font-semibold mb-3 text-white">
             Contact Us
           </h3>
           <ul className="space-y-2 text-sm">
             <li className="flex items-start gap-2">
               <MapPin
                 size={16}
-                className="text-blue-600 dark:text-blue-400 mt-1"
+                className="text-blue-400 mt-1"
               />
               <span>
                 112/H/13, Raja Samaranayaka Mawatha, Alubomulla, Panadura
               </span>
             </li>
             <li className="flex items-center gap-2">
-              <Phone size={16} className="text-blue-600 dark:text-blue-400" />
+              <Phone size={16} className="text-blue-400" />
               <a
                 href="tel:+94756343816"
-                className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+                className="hover:text-blue-400 transition"
               >
                 +94 75 634 3816
               </a>
             </li>
             <li className="flex items-center gap-2">
-              <Mail size={16} className="text-blue-600 dark:text-blue-400" />
+              <Mail size={16} className="text-blue-400" />
               <a
                 href="mailto:info@laknethdigital.lk"
-                className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+                className="hover:text-blue-400 transition"
               >
                 info@laknethdigital.lk
               </a>
             </li>
             <li className="flex items-center gap-2">
-              <Clock size={16} className="text-blue-600 dark:text-blue-400" />
+              <Clock size={16} className="text-blue-400" />
               <span>Mon – Sun: 9.00am – 10.00pm</span>
             </li>
           </ul>
@@ -115,7 +115,7 @@ export default function Footer() {
 
         {/* ===== SOCIALS ===== */}
         <div className="flex flex-col items-center md:items-start">
-          <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">
+          <h3 className="text-lg font-semibold mb-3 text-white">
             Follow Us
           </h3>
           <div className="flex gap-5">
@@ -124,7 +124,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="p-3 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-500 transition-transform transform hover:-translate-y-1 shadow-md"
+              className="p-3 rounded-full bg-gray-800 text-gray-300 hover:bg-blue-600 hover:text-white transition-transform transform hover:-translate-y-1 shadow-md"
             >
               <Facebook size={20} />
             </a>
@@ -134,7 +134,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="p-3 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-pink-600 hover:text-white dark:hover:bg-pink-500 transition-transform transform hover:-translate-y-1 shadow-md"
+              className="p-3 rounded-full bg-gray-800 text-gray-300 hover:bg-pink-600 hover:text-white transition-transform transform hover:-translate-y-1 shadow-md"
             >
               <Instagram size={20} />
             </a>
@@ -144,7 +144,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="p-3 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-blue-700 hover:text-white dark:hover:bg-blue-600 transition-transform transform hover:-translate-y-1 shadow-md"
+              className="p-3 rounded-full bg-gray-800 text-gray-300 hover:bg-blue-700 hover:text-white transition-transform transform hover:-translate-y-1 shadow-md"
             >
               <Linkedin size={20} />
             </a>
@@ -156,12 +156,12 @@ export default function Footer() {
       <div className="text-center py-4 text-sm">
         <p>
           © {new Date().getFullYear()}{" "}
-          <span className="text-blue-600 dark:text-blue-400 font-medium">
+          <span className="text-blue-400 font-medium">
             Lakneth Digital Solutions
           </span>
           . All Rights Reserved.
         </p>
-        <p className="text-gray-500 dark:text-gray-400">
+        <p className="text-gray-400">
           Empowering Digital Growth 💡
         </p>
       </div>

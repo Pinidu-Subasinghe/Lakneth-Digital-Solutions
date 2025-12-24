@@ -42,8 +42,7 @@ export default function HeroSection() {
       style={{ height: heroHeight }}
       className="relative flex items-center justify-center 
   bg-gradient-to-br 
-  from-sky-700 via-indigo-600 to-emerald-500 
-  dark:from-slate-900 dark:via-indigo-900 dark:to-blue-900 
+  from-slate-900 via-indigo-900 to-blue-900 
   text-white overflow-hidden"
     >
       {/* Glow Overlays */}
@@ -91,7 +90,7 @@ export default function HeroSection() {
           transition={{ duration: 0.9 }}
           className="w-full md:w-1/2 flex justify-center items-center relative"
         >
-          <div className="absolute w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] md:w-[420px] md:h-[420px] bg-white/10 dark:bg-white/5 blur-3xl rounded-full -z-10"></div>
+          <div className="absolute w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] md:w-[420px] md:h-[420px] bg-white/5 blur-3xl rounded-full -z-10"></div>
 
           <motion.img
             src={heroImg}
