@@ -108,9 +108,9 @@ function App() {
       {/* 🪔 Vesak Lantern GIFs */}
       <FestiveEffect
         startMonth={5}
-        startDay={23}
+        startDay={1}
         endMonth={5}
-        endDay={23}
+        endDay={31}
         //forceVisible={true} // Uncomment to test outside Vesak period
       >
         <VesakLanternGIFs />
