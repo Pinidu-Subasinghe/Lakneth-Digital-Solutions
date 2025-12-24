@@ -58,13 +58,13 @@ const openWhatsApp = (page) => {
 
   const msg =
     `Hello, I'm interested in this Facebook Page:\n\n` +
-    `📌 *Name:* ${page.name}\n` +
-    `👍 *Likes:* ${page.likes.toLocaleString()}\n` +
-    `🏷️ *Category:* ${page.categories.join(", ")}\n\n` +
-    `🔵 *Verified Status:* ${verifiedStatus}\n` +
-    `⚙️ *Page Quality:* ${qualityInfo[page.qualityStatus]}\n\n` +
-    `💰 *Pricing Details:*\n${priceMessage}` +
-    `🔗 *Page URL:* ${page.url}\n\n` +
+    `📌*Name:* ${page.name}\n` +
+    `👍*Likes:* ${page.likes.toLocaleString()}\n` +
+    `🏷️*Category:* ${page.categories.join(", ")}\n\n` +
+    `🔵*Verified Status:* ${verifiedStatus}\n` +
+    `⚙️*Page Quality:* ${qualityInfo[page.qualityStatus]}\n\n` +
+    `💰*Pricing Details:*\n${priceMessage}` +
+    `🔗*Page URL:* ${page.url}\n\n` +
     `Please send more details.`;
 
   const encoded = encodeURIComponent(msg);
@@ -318,7 +318,7 @@ export default function FacebookSelling() {
 
             const qualityText = {
               green: "No Issues",
-              yellow: "Has Warnings",
+              yellow: "Warnings",
               red: "Restricted",
               black: "Unpublished / Severe Issues",
             };
@@ -326,7 +326,7 @@ export default function FacebookSelling() {
             return (
               <div
                 key={page.id}
-                className="relative p-8 bg-white/80 dark:bg-gray-900/80 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-md h-full backdrop-blur-md group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl overflow-hidden flex flex-col"
+                className="relative p-4 bg-white/80 dark:bg-gray-900/80 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-md h-full backdrop-blur-md group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl overflow-hidden flex flex-col"
               >
                 {/* ✨ Glow overlay */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
