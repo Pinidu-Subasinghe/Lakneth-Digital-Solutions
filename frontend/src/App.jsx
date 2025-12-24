@@ -56,7 +56,7 @@ function FestiveEffect({
 /* ❄️ Snow Layer (December only) */
 function SnowLayer() {
   return (
-    <FestiveEffect startMonth={12} startDay={1} endMonth={12} endDay={31}>
+    <FestiveEffect startMonth={12} startDay={1} endMonth={1} endDay={5}>
       <Snowfall
         color="white"
         snowflakeCount={100} // mobile-safe
