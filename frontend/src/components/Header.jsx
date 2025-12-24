@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Squash as Hamburger } from "hamburger-react"; // Hamburger-react
 import SL_Flag from "../assets/lk.png"; // adjust path if needed
 
 /* 🎉 Reusable FestiveEffect wrapper */
@@ -81,12 +81,18 @@ export default function Header() {
             startDay={1}
             endMonth={2}
             endDay={7}
-            //forceVisible={true} // remove for real deployment
+            //forceVisible={true} // for testing
             onVisibleChange={(v) => v && setEventActive(v)}
           >
-            <span className="text-2xl font-extrabold text-yellow-400 tracking-tight flex items-center gap-2">
-              {indDay}<sup className="align-super text-s">{ordinal}</sup> Independence Day
-              <img src={SL_Flag} alt="SL Flag" className="w-8 h-auto" />
+            <span className="text-2xl sm:text-xl xs:text-lg font-extrabold text-yellow-400 tracking-tight flex items-center gap-2">
+              {indDay}
+              <sup className="align-super text-xs">{ordinal}</sup> Independence
+              Day
+              <img
+                src={SL_Flag}
+                alt="SL Flag"
+                className="w-6 sm:w-5 xs:w-4 h-auto"
+              />
             </span>
           </FestiveEffect>
 
@@ -112,14 +118,14 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Mobile Menu */}
+        {/* Mobile Hamburger Menu */}
         <div className="flex items-center md:hidden ml-auto relative">
-          <button
-            className="p-2 rounded-md text-gray-200 hover:bg-gray-800 transition"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            {menuOpen ? <X size={26} /> : <Menu size={26} />}
-          </button>
+          <Hamburger
+            toggled={menuOpen}
+            toggle={setMenuOpen}
+            size={26}
+            color="#E5E7EB"
+          />
 
           <AnimatePresence>
             {menuOpen && (
