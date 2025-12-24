@@ -148,7 +148,7 @@ export default function Footer() {
             alt="Sri Lanka Flag"
             className="w-5 h-auto inline-block"
           />
-          with <span className="text-red-500">&#10084;</span>
+          with ♥️
         </p>
       </div>
     </footer>
