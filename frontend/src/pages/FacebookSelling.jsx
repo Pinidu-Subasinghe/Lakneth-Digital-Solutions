@@ -222,7 +222,7 @@ export default function FacebookSelling() {
   };
 
   return (
-    <section className="relative bg-gray-900 min-h-screen">
+    <section className="relative bg-gray-950 min-h-screen">
       {/* FIXED FILTER BUTTON (Moodle-style) */}
       <div className="group fixed top-14 left-0 z-50 flex items-center">
         {/* FILTER BUTTON */}
@@ -326,8 +326,11 @@ export default function FacebookSelling() {
             return (
               <div
                 key={page.id}
-                className="relative bg-gray-800 rounded-xl shadow-md p-5 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] overflow-hidden flex flex-col"
+                className="relative p-8 bg-white/80 dark:bg-gray-900/80 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-md h-full backdrop-blur-md group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl overflow-hidden flex flex-col"
               >
+                {/* ✨ Glow overlay */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+
                 {/* STATUS RIBBON */}
                 {page.status === "available" && (
                   <div className="absolute top-3 left-0 bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-r-lg shadow-lg z-20">

@@ -38,12 +38,12 @@ export default function WebDesign() {
 
   const categoryColors = {
     Bronze: "bg-amber-600/15 text-amber-700 border-amber-600/30",
-    Silver: "bg-gray-400/15 text-gray-700 border-gray-400/40",
+    Silver: "bg-gray-400/15 text-white-700 border-gray-400/40",
     Gold: "bg-yellow-500/20 text-yellow-700 border-yellow-500/40",
   };
 
   return (
-    <section className="min-h-screen px-6 py-12 bg-gray-900 text-gray-200">
+    <section className="min-h-screen px-6 py-12 bg-gray-950 text-gray-200">
       <div className="max-w-7xl mx-auto">
         {/* PAGE TITLE */}
         <h1 className="text-4xl font-bold mb-4">Web Design & Development</h1>
@@ -67,9 +67,10 @@ export default function WebDesign() {
             return (
               <div
                 key={pkg.id}
-                className="relative bg-gray-800 rounded-xl shadow-md p-6 hover:shadow-xl 
-  transition-all border border-gray-700 flex flex-col"
+                className="relative p-8 bg-white/80 dark:bg-gray-900/80 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-md h-full backdrop-blur-md group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl overflow-hidden flex flex-col"
               >
+                {/* ✨ Glow overlay */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
                 {/* DISCOUNT BADGE */}
                 {pkg.discount > 0 && (
                   <div className="absolute top-3 right-3 bg-pink-600 text-white text-xs font-bold px-2 py-1 rounded-lg shadow z-20">
@@ -129,13 +130,15 @@ export default function WebDesign() {
         <h2 className="text-3xl font-semibold mt-16 mb-6">
           Completed Projects
         </h2>
-
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {data.projects.map((project) => (
             <div
               key={project.id}
-              className="bg-gray-800 shadow-md border border-gray-700 rounded-xl overflow-hidden hover:shadow-xl transition"
+              className="relative bg-white/80 dark:bg-gray-900/80 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-md h-full backdrop-blur-md group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl overflow-hidden flex flex-col"
             >
+              {/* ✨ Glow overlay */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+
               <img
                 src={project.image}
                 alt={project.name}
@@ -194,9 +197,7 @@ export default function WebDesign() {
               {selectedPackage.title}
             </h2>
 
-            <p className="text-gray-300 mb-4">
-              {selectedPackage.fullDesc}
-            </p>
+            <p className="text-gray-300 mb-4">{selectedPackage.fullDesc}</p>
 
             {/* Features */}
             <h3 className="font-semibold text-lg mb-2">Features</h3>
