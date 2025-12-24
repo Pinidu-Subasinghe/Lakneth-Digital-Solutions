@@ -85,7 +85,7 @@ export default function Header() {
             onVisibleChange={(v) => v && setEventActive(v)}
           >
             <span className="text-2xl font-extrabold text-yellow-400 tracking-tight flex items-center gap-2">
-              {indDay}<sup className="align-super">{ordinal}</sup> Independence Day
+              {indDay}<sup className="align-super text-s">{ordinal}</sup> Independence Day
               <img src={SL_Flag} alt="SL Flag" className="w-8 h-auto" />
             </span>
           </FestiveEffect>
