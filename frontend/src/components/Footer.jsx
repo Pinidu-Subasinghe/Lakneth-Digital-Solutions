@@ -100,7 +100,7 @@ export default function Footer() {
           <h3 className="text-lg font-semibold mb-3 text-white">Follow Us</h3>
           <div className="flex gap-5">
             <a
-              href="https://www.facebook.com/share/17V3eKJnmx/"
+              href="https://www.facebook.com/LaknethDigitalSolutions"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
