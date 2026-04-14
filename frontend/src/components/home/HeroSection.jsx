@@ -2,11 +2,29 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { ChevronUp } from "lucide-react";
-import heroImg from "../../assets/marketing2.png";
+import defaultHeroImg from "../../assets/marketing2.png";
+import newYearHeroImg from "../../assets/new_year.png";
 
 export default function HeroSection() {
   const [showTop, setShowTop] = useState(false);
   const [heroHeight, setHeroHeight] = useState("100vh");
+
+  const now = new Date();
+  const year = now.getFullYear();
+  const seasonalStart = new Date(year, 3, 14, 0, 0, 0, 0);
+  const seasonalEnd = new Date(year, 3, 17, 23, 59, 59, 999);
+  const useSeasonalHero = now >= seasonalStart && now <= seasonalEnd;
+  const heroImg = useSeasonalHero ? newYearHeroImg : defaultHeroImg;
+  const heroImgClassName = useSeasonalHero
+    ? "w-full max-w-[230px] sm:max-w-[280px] md:max-w-[350px]"
+    : "w-full max-w-[280px] sm:max-w-[340px] md:max-w-[520px] drop-shadow-2xl";
+  const heroImgStyle = useSeasonalHero
+    ? {
+        // Create a white edge that follows PNG transparency, plus a soft neon glow.
+        filter:
+          "drop-shadow(1px 0 0 rgba(255,255,255,0.92)) drop-shadow(-1px 0 0 rgba(255,255,255,0.92)) drop-shadow(0 1px 0 rgba(255,255,255,0.92)) drop-shadow(0 -1px 0 rgba(255,255,255,0.92)) drop-shadow(0 0 24px rgba(255,255,255,0.72))",
+      }
+    : undefined;
 
   useEffect(() => {
     const updateHeight = () => {
@@ -91,17 +109,15 @@ export default function HeroSection() {
           className="w-full md:w-1/2 flex justify-center items-center relative"
         >
           <div className="absolute w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] md:w-[420px] md:h-[420px] bg-white/5 blur-3xl rounded-full -z-10"></div>
+          {useSeasonalHero && (
+            <div className="absolute w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] md:w-[330px] md:h-[330px] bg-white/40 blur-[80px] rounded-full -z-10"></div>
+          )}
 
           <motion.img
             src={heroImg}
             alt="Digital Growth"
-            className="
-              w-full 
-              max-w-[280px] 
-              sm:max-w-[340px] 
-              md:max-w-[520px] 
-              drop-shadow-2xl
-            "
+            className={heroImgClassName}
+            style={heroImgStyle}
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           />
