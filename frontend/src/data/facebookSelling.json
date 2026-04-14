@@ -37,18 +37,6 @@
     "image": "/pages/hutch.jpg"
   },
   {
-    "id": 4,
-    "name": "SIGAr",
-    "categories": ["Nikan"],
-    "likes": 10500,
-    "price": 45000,
-    "discount": 15,
-    "status": "available",
-    "qualityStatus": "yellow",
-    "url": "https://www.facebook.com/page.SIGAr",
-    "image": "/pages/techdeals.jpg"
-  },
-  {
     "id": 5,
     "name": "Bybit",
     "categories": ["Crypto"],
